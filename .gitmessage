@@ -1,0 +1,27 @@
+<type>: [LeetCode #<number>] <title>
+<description (option)>
+
+---
+
+<type>: commit 類型
+feat     → 新功能（新增題目、實作）
+fix      → 修 bug
+test     → 新增或修正測試
+refactor → 重構（邏輯不變但更優化）
+doc      → 修改文件（如 README）
+chore    → 雜項變更（調整資料夾、plugin 等）
+
+<number>: LeetCode 題目編號
+
+<title>: LeetCode 題目名稱
+
+<description (option)>：
+- 加上這次的改動細節，例如新增了哪個類別、補上了哪些測試
+- 可列出解法思路、效能改善說明等
+
+---
+
+範例：
+feat: [LeetCode #1] Two Sum
+- 新增 TwoSum 類別，包含 HashMap 解法
+- 補上單元測試 ThreeCase 驗證
