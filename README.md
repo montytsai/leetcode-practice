@@ -21,6 +21,7 @@
 leetcode-practice/
 ├── README.md                   # 專案說明文件
 ├── pom.xml                     # Maven 設定檔
+├── doc/                        # 存放文件
 ├── src/
 │   ├── main/
 │   │   └── java/
@@ -30,7 +31,7 @@ leetcode-practice/
 │   │                   └── leetcode/
 │   │                       ├── Main.java             # 主程式
 │   │                       └── array/                # 依照 topic 進行分類
-│   │                           └── TwoSum.java       # 題目實作
+│   │                           └── BinarySearch.java       # 題目實作
 │   └── test/
 │       └── java/
 │           └── io/
@@ -38,16 +39,13 @@ leetcode-practice/
 │                   └── monty/
 │                       └── leetcode/
 │                           └── array/
-│                               └── TwoSumTest.java   # 題目對應單元測試
+│                               └── BinarySearchTest.java   # 題目對應單元測試
 ```
 
 ---
 
 ## ✅ 題目紀錄進度
-| 題號 | 題目名稱    | 分類    | 難度   | 狀態    | 解法連結                                                           |
-|----|---------|-------|------|-------|----------------------------------------------------------------|
-| 1  | Two Sum | Array | Easy | ✅ 已完成 | [解法](src/main/java/io/github/monty/leetcode/array/TwoSum.java) |
-| 2  | ......  |
+紀錄於 [LeetCode 刷題紀錄](doc/leetcode-progress.md)
 
 ---
 

@@ -1,5 +1,5 @@
-<type>: [LeetCode #<number>] <title>
-<description (option)>
+type: [#ID] title
+description (option)
 
 ---
 
@@ -11,7 +11,7 @@ refactor → 重構（邏輯不變但更優化）
 doc      → 修改文件（如 README）
 chore    → 雜項變更（調整資料夾、plugin 等）
 
-<number>: LeetCode 題目編號
+<ID>: LeetCode 題目編號
 
 <title>: LeetCode 題目名稱
 
@@ -22,6 +22,6 @@ chore    → 雜項變更（調整資料夾、plugin 等）
 ---
 
 範例：
-feat: [LeetCode #1] Two Sum
+feat: [#1] Two Sum
 - 新增 TwoSum 類別，包含 HashMap 解法
 - 補上單元測試 ThreeCase 驗證
