@@ -1,0 +1,37 @@
+# LeetCode 刷題紀錄
+
+這份文件用於追蹤 LeetCode 每日刷題進度，預計進行 60 天。
+
+| Day | ID   | Title                            | Category   | Status | Solution Link                                                                                | LeetCode                                                              | Article                                | Notes | 
+|-----|------|----------------------------------|------------|--------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|----------------------------------------|-------|
+| 1   | 704  | Binary Search                    | array      | 🚧     | [BinarySearch.java](../src/main/java/io/github/monty/leetcode/array/ID704_BinarySearch.java) | [🔗](https://leetcode.com/problems/binary-search/)                    | [🔗](../doc/daily/day01-2025-04-18.md) |       | 
+|     | 27   | Remove Element                   | array      | 🚧     | [RemoveElement.java]()                                                                       | [🔗](https://leetcode.com/problems/remove-element/)                   |                                        |       | 
+| 2   | 977  | Squares of a Sorted Array        | array      | ⏳      | [SquaresOfASortedArray.java]()                                                               | [🔗](https://leetcode.com/problems/squares-of-a-sorted-array/)        |                                        |       |       
+|     | 209  | Minimum Size Subarray Sum        | array      | ⏳      | [MinimumSizeSubarraySum.java]()                                                              | [🔗](https://leetcode.com/problems/minimum-size-subarray-sum/)        |                                        |       |       
+|     | 59   | Spiral Matrix                    | matrix     | ⏳      | [SpiralMatrix.java]()                                                                        | [🔗](https://leetcode.com/problems/spiral-matrix/)                    |                                        |       |       
+| 3   | 203  | Remove Linked List Elements      | linkedlist | ⏳      | [RemoveLinkedListElements.java]()                                                            | [🔗](https://leetcode.com/problems/remove-linked-list-elements/)      |                                        |       |       
+|     | 707  | Design Linked List               | linkedlist | ⏳      | [DesignLinkedList.java]()                                                                    | [🔗](https://leetcode.com/problems/design-linked-list/)               |                                        |       |       
+|     | 206  | Reverse Linked List              | linkedlist | ⏳      | [ReverseLinkedList.java]()                                                                   | [🔗](https://leetcode.com/problems/reverse-linked-list/)              |                                        |       |       
+| 4   | 24   | Swap Nodes in Pairs              | linkedlist | ⏳      | [SwapNodesInPairs.java]()                                                                    | [🔗](https://leetcode.com/problems/swap-nodes-in-pairs/)              |                                        |       |       
+|     | 19   | Remove Nth Node From End of List | linkedlist | ⏳      | [RemoveNthNodeFromEndOfList.java]()                                                          | [🔗](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) |                                        |       |       
+|     | 142  | Linked List Cycle II             | linkedlist | ⏳      | [LinkedListCycleII.java]()                                                                   | [🔗](https://leetcode.com/problems/linked-list-cycle-ii/)             |                                        |       |       
+| 5   | rest | -                                | -          | 💤     | -                                                                                            | -                                                                     | -                                      | -     |       
+| 6   | 242  | Valid Anagram                    | hashmap    | ⏳      | [ValidAnagram.java]()                                                                        | [🔗](https://leetcode.com/problems/valid-anagram/)                    |                                        |       |       
+|     | 349  | Intersection of Two Arrays       | hashmap    | ⏳      | [IntersectionOfTwoArrays.java]()                                                             | [🔗](https://leetcode.com/problems/intersection-of-two-arrays/)       |                                        |       |       
+|     | 202  | Happy Number                     | math       | ⏳      | [HappyNumber.java]()                                                                         | [🔗](https://leetcode.com/problems/happy-number/)                     |                                        |       |       
+|     | 1    | Two Sum                          | array      | ⏳      | [TwoSum.java]()                                                                              | [🔗](https://leetcode.com/problems/two-sum/)                          |                                        |       |       
+| 7   | 454  | 4Sum II                          | hashmap    | ⏳      | [FourSumII.java]()                                                                           | [🔗](https://leetcode.com/problems/4sum-ii/)                          |                                        |       |       
+|     | 383  | Ransom Note                      | hashmap    | ⏳      | [RansomNote.java]()                                                                          | [🔗](https://leetcode.com/problems/ransom-note/)                      |                                        |       |       
+|     | 15   | 3Sum                             | array      | ⏳      | [ThreeSum.java]()                                                                            | [🔗](https://leetcode.com/problems/3sum/)                             |                                        |       |       
+|     | 18   | 4Sum                             | array      | ⏳      | [FourSum.java]()                                                                             | [🔗](https://leetcode.com/problems/4sum/)                             |                                        |       |
+| ... |      |                                  |            |        |                                                                                              |                                                                       |                                        |       |       
+| 60  |      |                                  |            |        |                                                                                              |                                                                       |                                        |       |       
+
+---
+
+## 狀態說明
+- ⏳ 未做: 尚未開始
+- 🚧 進行中：已開始但未完成
+- 🧪 測試中：實作完成但單元測試待補
+- ✅ 完成：已完成實作與測試
+- 💤 休息日
