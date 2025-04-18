@@ -29,10 +29,10 @@ leetcode-practice/
 │   ├── leetcode/
 │   │   └── editor/
 │   │       └── en/                                              # 使用 IntelliJ [leetcode.editor] 外掛自動生成
-│   │           ├── ID704_BinarySearch.java                      # 題目原始 Java 檔 (含題敘與預設範例)
+│   │           ├── ID704BinarySearch.java                       # 題目原始 Java 檔 (含題敘與預設範例)
 │   │           └── doc/
 │   │               └── content/
-│   │                   └── ID704_BinarySearch.md                # 題目敘述 Markdown 檔，便於閱讀與註解
+│   │                   └── ID704BinarySearch.md                 # 題目敘述 Markdown 檔，便於閱讀與註解
 │   ├── main/
 │   │   └── java/
 │   │       └── io/
@@ -41,7 +41,7 @@ leetcode-practice/
 │   │                   └── leetcode/
 │   │                       ├── Main.java                        # 主程式入口（選用，可用於整體測試）
 │   │                       └── array/                           # 題型分類
-│   │                           └── ID704_BinarySearch.java      # 題目解法實作
+│   │                           └── ID704BinarySearch.java       # 題目解法實作
 │   └── test/
 │       └── java/
 │           └── io/
@@ -49,11 +49,11 @@ leetcode-practice/
 │                   └── monty/
 │                       └── leetcode/
 │                           └── array/
-│                               └── ID704_BinarySearchTest.java  # 題目對應單元測試（JUnit 撰寫）
+│                               └── ID704BinarySearchTest.java  # 題目對應單元測試（JUnit 撰寫）
 ```
 
 ### 命名與結構原則
-- 題目皆以 `IDxxx_題名.java` 命名，方便對照 LeetCode 題號與查找
+- 題目皆以 `IDxxx題名.java` 命名，方便對照 LeetCode 題號與查找
 - 使用 IntelliJ [Leetcode Editor外掛](https://github.com/shuzijun/leetcode-editor) 產生題敘與範例程式碼
 - 每題有： 
   - 外掛生成 LeetCode 執行檔（src/leetcode/editor/en/） 
@@ -64,7 +64,7 @@ leetcode-practice/
 ---
 
 ## ✅ 題目紀錄進度
-紀錄於 [LeetCode 刷題紀錄](doc/leetcode-daily-challenge)
+紀錄於 [LeetCode 刷題紀錄](doc/leetcode-daily-challenge.md)
 
 ---
 
