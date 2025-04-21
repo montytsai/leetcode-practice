@@ -20,22 +20,18 @@ public class ID209MinimumSizeSubarraySum {
      */
     public int minSubArrayLen(int target, int[] nums) {
         int minSubArrayLen = Integer.MAX_VALUE;
+
         int left = 0;
-        int sum = 0;
-
+        int sum = 0; // 先把 sum 存起來
+        // right 標示終點位置
         for (int right = 0; right < nums.length; right++) {
-//            System.out.println("=======================================");
             sum += nums[right];
-//            System.out.printf("left: %s, right: %s, sum: %s\n", left, right, sum);
-//            System.out.println("===");
 
+            // 滑動窗口意思是如何動態調整區間，重點在於如何調整"起始位置(left)"
             while (sum >= target) {
                 minSubArrayLen = Math.min(minSubArrayLen, right - left + 1);
-                sum -= nums[left];
-                left++;
-//                System.out.printf("left: %s, right: %s, sum: %s\n", left, right, sum);
+                sum -= nums[left++];
             }
-//            System.out.printf(" => minSubArrayLen: %s\n", minSubArrayLen);
         }
 
         return minSubArrayLen == Integer.MAX_VALUE ? 0 : minSubArrayLen;
