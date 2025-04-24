@@ -36,5 +36,24 @@ public class ID203RemoveLinkedListElements {
         return dummyHead.next;
     }
 
-}
+    /**
+     * Leetcode 題目要求實作類別
+     */
+    public static class ListNode {
+        int val;
+        ListNode next;
 
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+}
