@@ -3,6 +3,7 @@ package io.github.monty.leetcode.binarytree;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,9 +17,38 @@ import java.util.List;
 public class ID144BinaryTreePreorderTraversal {
 
     /**
-     * 使用「迭代」實現前序遍歷
+     * 使用「迭代 + 空指針標記法」實現前序遍歷
      */
     public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+
+        // 利用棧來彈出要處理的元素
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.peek();
+            if (node != null) {
+                stack.pop();
+
+                if (node.right != null) stack.push(node.right); // 右
+                if (node.left != null) stack.push(node.left); // 左
+                stack.push(node); // 中
+                stack.push(null);
+            } else {
+                stack.pop(); // pop null
+                node = stack.pop();
+                result.add(node.val);
+            }
+
+        }
+        return result;
+    }
+
+    /**
+     * 使用「迭代」實現前序遍歷
+     */
+    public List<Integer> preorderTraversalIterative(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
 

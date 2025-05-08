@@ -17,24 +17,31 @@
 class Solution {
 
     /**
-     * 使用迭代實現後序遍歷
+     * 使用「迭代 + 空指針標記法」實現後序遍歷
      */
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
 
-        Deque<TreeNode> stack = new ArrayDeque<>();
+        // 利用棧來彈出要處理的元素
+        Deque<TreeNode> stack = new LinkedList<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            // 處理順序: 中 → 右 → 左
-            result.add(node.val);
-            if (node.left != null) stack.push(node.left);
-            if (node.right != null) stack.push(node.right);
-        }
+            TreeNode node = stack.peek();
+            if (node != null) {
+                stack.pop();
 
-        // 反轉結果: 左 → 右 → 中
-        Collections.reverse(result);
+                stack.push(node); // 中
+                stack.push(null);
+                if (node.right != null) stack.push(node.right); // 右
+                if (node.left != null) stack.push(node.left); // 左
+            } else {
+                stack.pop(); // pop null
+                node = stack.pop();
+                result.add(node.val);
+            }
+
+        }
         return result;
     }
 

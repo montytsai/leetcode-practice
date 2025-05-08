@@ -4,7 +4,7 @@
 - 一、題目概述
 - 二、解法一：遞迴法
 - 三、解法二：迭代法
-- 四、解法三：統一迭代寫法
+- 四、解法三：統一迭代寫法（迭代 + 空指針標記法）
 
 --- 
 
@@ -44,20 +44,26 @@
 
 ## 延伸問題
 
-### 1. 為何使用遞迴解法？
+### 1. 為何使用「遞迴解法」？
 
 - 二元樹本身就是遞迴結構：每個節點的左右子樹仍是二元樹。
 - 可直接使用 DFS 深度優先遍歷的特性處理走訪順序。
 - 實作簡潔，與樹的結構天然對應。
 
-### 2. 為何使用迭代解法？
+### 2. 為何使用「迭代解法」？
 
 - 避免因樹太深導致系統棧溢位（Stack Overflow）。
 - 更容易控制與擴充遍歷邏輯，例如同時記錄父節點或處理額外資訊。
 - 更接近底層實作，有利於理解 DFS 運作原理。
 - 有助於理解「統一範本法」（如加 visited 標記的迭代法）。
 
-### 3. 遞迴解法 vs 迭代解法？
+### 3. 為何使用「迭代 + 空指針標記法」？
+
+- **模擬遞迴調用棧邏輯，容易統一處理前中後序**：使用 `null` 作為已訪問標記，可以讓「處理節點」與「遞迴回來」的語意明確分離。
+- **較原始迭代更具可讀性與邏輯性**：傳統迭代解法（如 inorder 使用 peek 判斷 + 指針移動）程式碼分支複雜；空指針標記法結構一致、清晰。
+- **方便教學與考場複製套用**：三種遍歷只要改順序即可，統一範本有助快速上手與應對面試。
+
+### 4. 遞迴解法 vs 迭代解法？
 
 #### 遞迴遍歷（遞迴本質）
 
@@ -314,3 +320,105 @@ class Solution {
 - 空間複雜度：
   - 最壞情況：O(n)，退化成鏈狀樹（例如只有右子樹），此時 stack 最深可達 n。
   - 平均情況：O(log n)，若為 平衡樹（例如 AVL 或完全二元樹），stack 深度平均為樹高 log n。
+
+---
+
+# 四、解法三：統一迭代寫法（迭代 + 空指針標記法）
+
+## 共用思路
+
+這三種遍歷方式本質是「遞迴模擬 → 改為迭代實作」，利用 `null` 標記法實現節點狀態的區分：
+
+1. **將節點壓入棧中時，不立刻處理**，而是根據遍歷順序壓入 **右、中、左** 順序的節點。
+2. **加入節點本身前先壓入一個 `null`** 作為標記，表示這個節點已經訪問過但尚未處理。
+3. 每次從棧中拿出來的元素如果是 `null`，就彈出並處理下一個節點（即「已訪問但尚未處理」的節點）。
+
+> ❗ 注意：使用此方法時，**棧中需要允許 `null` 元素作為標記**，因此：
+>
+> - **可用：** `LinkedList`、`Stack`（允許 `null`）
+> - **不可用：** `ArrayDeque`（`push(null)` 會丟出 `NullPointerException`）
+
+--- 
+
+## 三種走訪順序與程式範例
+
+### 共用程式碼
+
+```java
+class Solution {
+  public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> result = new ArrayList<>();
+    if (root == null) return result;
+
+    // 使用 stack 存放被訪問過的節點
+    Deque<TreeNode> stack = new LinkedList<>();
+    stack.push(root);
+    while (!stack.isEmpty()) {
+      TreeNode node = stack.peek();
+
+      if (node != null) {
+        stack.pop(); // 把 node 先彈出，再照順序放回來
+        
+        // 根據遍歷順序，決定壓入順序（中左右、左右中等）
+        // ↓↓↓ 唯一不同的部分 ↓↓↓
+        stack.push(node); // 中
+        stack.push(null); // 標記此節點已訪問過
+        if (node.right != null) stack.push(node.right); // 右
+        if (node.left != null) stack.push(node.left); // 左
+        // ↑↑↑ 唯一不同的部分 ↑↑↑
+        
+      } else { // 遇到空指針，此指針被訪問過，可以放進結果集
+        stack.pop(); // 彈出 null
+        node = stack.pop(); // 彈出被標記的指針
+
+        result.add(node.val); // 加入結果集
+      }
+    }
+
+    return result;
+  }
+}
+```
+
+### LC144. 前序遍歷 Preorder Traversal（中 → 左 → 右）
+
+```
+      // ...
+        if (node.right != null) stack.push(node.right); // 右
+        if (node.left != null) stack.push(node.left); // 左
+        stack.push(node); // 中
+        stack.push(null);
+      // ...
+```
+
+### LC94. 中序遍歷 Inorder Traversal（左 → 中 → 右）
+
+```
+      // ...
+        if (node.right != null) stack.push(node.right); // 右
+        stack.push(node); // 中
+        stack.push(null);
+        if (node.left != null) stack.push(node.left); // 左
+      // ...
+```
+
+### LC145. 後序遍歷 Postorder Traversal（左 → 右 → 中）
+
+```
+      // ...
+        stack.push(node); // 中
+        stack.push(null);
+        if (node.right != null) stack.push(node.right); // 右
+        if (node.left != null) stack.push(node.left); // 左
+      // ...
+```
+
+--- 
+
+## 複雜度分析（統一迭代解法通用）
+
+- **時間複雜度：`O(n)`**
+每個節點最多被壓棧與彈棧各一次，處理一次。
+
+- **空間複雜度：`O(n)`**  
+  最壞情況（例如不平衡樹）會退化到高度為 `n` 的情況，stack 最深為 `n`；平均情況約 `O(log n)`。

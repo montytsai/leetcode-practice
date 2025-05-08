@@ -16,19 +16,31 @@
  */
 class Solution {
 
+    /**
+     * 使用「迭代 + 空指針標記法」實現前序遍歷
+     */
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
 
         // 利用棧來彈出要處理的元素
-        Deque<TreeNode> stack = new ArrayDeque<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            result.add(node.val); // 中
-            // 右子樹先放，因為 stack 先進後出，左要先處理要先彈出
-            if (node.right != null) stack.push(node.right); // 右
-            if (node.left != null) stack.push(node.left); // 子
+            TreeNode node = stack.peek();
+            if (node != null) {
+                stack.pop();
+
+                if (node.right != null) stack.push(node.right); // 右
+                if (node.left != null) stack.push(node.left); // 左
+                stack.push(node); // 中
+                stack.push(null);
+            } else {
+                stack.pop(); // pop null
+                node = stack.pop();
+                result.add(node.val);
+            }
+
         }
         return result;
     }
