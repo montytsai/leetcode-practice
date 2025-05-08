@@ -1,6 +1,8 @@
 package io.github.monty.leetcode.binarytree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -14,9 +16,29 @@ import java.util.List;
 public class ID144BinaryTreePreorderTraversal {
 
     /**
-     * 使用遞歸實現前序遍歷
+     * 使用「迭代」實現前序遍歷
      */
     public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+
+        // 利用棧來彈出要處理的元素
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val); // 中
+            // 右子樹先放，因為 stack 先進後出，左要先處理要先彈出
+            if (node.right != null) stack.push(node.right); // 右
+            if (node.left != null) stack.push(node.left); // 子
+        }
+        return result;
+    }
+
+    /**
+     * 使用遞歸實現前序遍歷
+     */
+    public List<Integer> preorderTraversalRecursive(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         preorder(root, result);
         return result;

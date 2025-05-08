@@ -16,20 +16,26 @@
  */
 class Solution {
 
+    /**
+     * 使用迭代實現後序遍歷
+     */
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        postorder(root, result);
-        return result;
-    }
+        if (root == null) return result;
 
-    private void postorder(TreeNode cur, List<Integer> res) {
-        if (cur == null) {
-            return;
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            // 處理順序: 中 → 右 → 左
+            result.add(node.val);
+            if (node.left != null) stack.push(node.left);
+            if (node.right != null) stack.push(node.right);
         }
-        // 左 → 右 → 中
-        postorder(cur.left, res);
-        postorder(cur.right, res);
-        res.add(cur.val);
+
+        // 反轉結果: 左 → 右 → 中
+        Collections.reverse(result);
+        return result;
     }
 
 }
