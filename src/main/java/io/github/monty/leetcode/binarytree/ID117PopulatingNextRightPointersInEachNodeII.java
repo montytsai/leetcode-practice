@@ -1,6 +1,7 @@
 package io.github.monty.leetcode.binarytree;
 
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * LeetCode #117:
@@ -12,7 +13,26 @@ import java.util.List;
 public class ID117PopulatingNextRightPointersInEachNodeII {
 
     public Node connect(Node root) {
-        return null;
+        if (root == null) return null;
+
+        Deque<Node> queue = new ArrayDeque<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            Node prev = null; // 紀錄上一個節點
+
+            int size = queue.size();
+            while (size-- > 0) {
+                Node curr = queue.poll();
+                if (prev != null) prev.next = curr; // 將上一個節點的 next 指向當前節點
+                prev = curr;
+
+                if (curr.left != null) queue.offer(curr.left);
+                if (curr.right != null) queue.offer(curr.right);
+            }
+        }
+
+        return root;
     }
 
     /**
@@ -21,7 +41,9 @@ public class ID117PopulatingNextRightPointersInEachNodeII {
      */
     public static class Node {
         public int val;
-        public List<Node> children;
+        public Node left;
+        public Node right;
+        public Node next;
 
         public Node() {
         }
@@ -30,9 +52,11 @@ public class ID117PopulatingNextRightPointersInEachNodeII {
             val = _val;
         }
 
-        public Node(int _val, List<Node> _children) {
+        public Node(int _val, Node _left, Node _right, Node _next) {
             val = _val;
-            children = _children;
+            left = _left;
+            right = _right;
+            next = _next;
         }
     }
 
