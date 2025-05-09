@@ -26,13 +26,6 @@ leetcode-practice/
 │   └── daily/                                                   # 存放每日解題日記（60 天挑戰）
 │       └── day01-2025-04-18.md                                  # 每日刷題筆記，檔名含日期
 ├── src/
-│   ├── leetcode/
-│   │   └── editor/
-│   │       └── en/                                              # 使用 IntelliJ [leetcode.editor] 外掛自動生成
-│   │           ├── ID704BinarySearch.java                       # 題目原始 Java 檔 (含題敘與預設範例)
-│   │           └── doc/
-│   │               └── content/
-│   │                   └── ID704BinarySearch.md                 # 題目敘述 Markdown 檔，便於閱讀與註解
 │   ├── main/
 │   │   └── java/
 │   │       └── io/
@@ -53,13 +46,22 @@ leetcode-practice/
 ```
 
 ### 命名與結構原則
-- 題目皆以 `IDxxx題名.java` 命名，方便對照 LeetCode 題號與查找
+
+- 題目檔名皆採 `IDxxx題名.java`，方便對照 LeetCode 題號與尋找
+
+- 每題包含：
+  - 自行整理的解法（依主題分類於 `src/main/.../topic*/`）
+  - 對應單元測試（位於 `src/test/.../topic*/`）
+
+- `topic*` 分類包含：
+  - `array/`
+  - `binarytree/`
+  - `hashtable/`
+  - `linkedlist/`
+  - `stackqueue/`
+  - `string/`
+
 - 使用 IntelliJ [Leetcode Editor外掛](https://github.com/shuzijun/leetcode-editor) 產生題敘與範例程式碼
-- 每題有： 
-  - 外掛生成 LeetCode 執行檔（src/leetcode/editor/en/） 
-  - 外掛生成 題目 Markdown 紀錄（src/leetcode/editor/en/doc/content/） 
-  - 自行整理的解法（依主題歸類在 src/main/.../主題/） 
-  - 對應的單元測試（src/test/.../主題/）
 
 ---
 
