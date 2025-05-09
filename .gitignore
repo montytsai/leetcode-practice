@@ -1,3 +1,4 @@
+# 忽略所有 target 資料夾
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -34,5 +35,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
-### draft
+### myself ###
+# 忽略草稿
 /draft/
+# 忽略 LeetCode IntelliJ Plugin 自動生成的內容
+src/leetcode/editor/en/
