@@ -10,17 +10,25 @@ package io.github.monty.leetcode.binarytree;
 public class ID104MaximumDepthOfBinaryTree {
 
     /**
-     * 解法一：經典遞迴
-     * 採用後序遞迴（post-order）遍歷，先求左右子樹深度後回傳最大值 + 1。
-     * Time: O(n), Space: O(h)
+     * 解法一：後序遞迴（左右中），求「最大深度」
+     * <p>
+     * - 本題要求「一棵二元樹的最大深度」
+     * - 定義差異說明
+     *   - 深度（depth）： 某節點到根節點的距離，由上往下計算（常用前序遍歷）
+     *   - 高度（height）：某節點到最遠葉子節點的距離（邊數），由下往上計算（常用後序遍歷）
+     *   - LeetCode 中定義是以「節點數」為單位：root 深度為 1（非學術上定義邊長為 0）
+     * - 而整棵樹的「最大深度」等同於「根節點的高度」
+     *   - 所以可以從葉子節點開始往上遞迴，計算每個節點的左右子樹高度，取 max
+     * <p>
+     * Time Complexity: O(n) - 每個節點會被訪問一次
+     * Space Complexity: O(h) - 遞迴深度最多為樹的高度（最壞情況為 O(n)）
      */
     public int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) return 0; // leaf 節點為最 1 的高度，走到 null => 沒有節點，高度為 0
 
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-
-        return Math.max(left, right) + 1;
+        int leftHeight = maxDepth(root.left); // 左
+        int rightHeight = maxDepth(root.right); // 右
+        return 1 + Math.max(leftHeight, rightHeight); // 中（根節點高度 = max(左右子樹高度) + 1）
     }
 
     /**

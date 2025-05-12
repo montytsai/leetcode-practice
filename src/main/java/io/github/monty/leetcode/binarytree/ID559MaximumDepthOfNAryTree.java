@@ -16,12 +16,19 @@ public class ID559MaximumDepthOfNAryTree {
 
     /**
      * 解法：DFS 遞迴（後序遍歷）
+     * <p>
      * 思路：
-     * - 若為空節點，深度為 0
-     * - 若為葉節點（無子節點），深度為 1
-     * - 否則遞迴計算所有子節點的最大深度，取其中最大者 + 1
-     * Time Complexity: O(n)，每個節點只遍歷一次
-     * Space Complexity: O(h)，h 為樹高（遞迴堆疊深度）
+     * - 本題為 N-ary Tree 的最大「深度」（Maximum Depth）
+     * - 而「根節點的高度」即為「整棵樹的最大深度」
+     * - 可採用後序遍歷（自下而上）計算子節點高度，再加上自身節點高度（+1）
+     * <p>
+     * 遞迴規則：
+     * - 若為 null，高度為 0（空樹）
+     * - 若為葉節點，高度為 1（只有自己這一層）
+     * - 否則遞迴所有子節點，取最大高度 + 1
+     * <p>
+     * Time Complexity: O(n) - 每個節點只被訪問一次
+     * Space Complexity: O(h) - 遞迴深度最多為樹高（最壞情況 O(n)）
      */
     public int maxDepth(Node root) {
         if (root == null) return 0;
@@ -31,7 +38,7 @@ public class ID559MaximumDepthOfNAryTree {
         for (Node child: root.children) {
             max = Math.max(max, maxDepth(child));
         }
-        return max + 1; // 最大深度加上這層高度
+        return max + 1; // 子節點的最大高度加上這層高度
     }
 
     /**
