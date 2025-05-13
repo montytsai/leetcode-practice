@@ -27,12 +27,6 @@ public class TreeNode {
 
     /**
      * 根據給定的層序陣列（可含 null）建構二元樹。
-     * 例如：TreeNode.of(1, null, 2, 3) 表示：
-     *      1
-     *       \
-     *        2
-     *       /
-     *      3
      *
      * @param values 層序輸入，每個元素代表節點值，null 表示該處為空。
      * @return 根節點 TreeNode
@@ -63,6 +57,16 @@ public class TreeNode {
         }
 
         return root;
+    }
+
+    /**
+     * 遞迴比較兩棵二元樹的結構與數值是否一致
+     */
+    public static boolean isSameTree(TreeNode a, TreeNode b) {
+        if (a == null && b == null) return true;
+        if (a == null || b == null) return false;
+        if (a.val != b.val) return false;
+        return isSameTree(a.left, b.left) && isSameTree(a.right, b.right);
     }
 
 }
