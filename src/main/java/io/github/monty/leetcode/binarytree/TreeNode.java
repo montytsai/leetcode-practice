@@ -69,5 +69,12 @@ public class TreeNode {
         return isSameTree(a.left, b.left) && isSameTree(a.right, b.right);
     }
 
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                '}';
+    }
+
 }
 
