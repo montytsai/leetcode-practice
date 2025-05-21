@@ -40,17 +40,17 @@ public class ID145BinaryTreePostorderTraversal {
             }
 
             // 看最上層節點（不馬上彈出）
-            TreeNode node = stack.peek();
+            curr = stack.peek();
 
             // 若沒有右子樹(null) or 右子樹已處理完(上個節點prev) => 才會處理目前節點。
-            if (node.right == null || node.right == prev) {
-                result.add(node.val); // 左右皆訪問完，處理中節點
+            if (curr.right == null || curr.right == prev) {
+                result.add(curr.val); // 左右皆訪問完，處理中節點
                 stack.pop();
-                prev = node;  // 標記這個節點處理過
-                // 不再往下走
+                prev = curr;  // 標記這個節點處理過
+                curr = null;// 不再往下走
             } else {
                 // 尚未訪問右子樹，進入右子樹
-                curr = node.right;
+                curr = curr.right;
             }
         }
 
