@@ -18,9 +18,55 @@ import java.util.List;
 public class ID145BinaryTreePostorderTraversal {
 
     /**
-     * 使用「迭代 + 空指針標記法」實現後序遍歷
+     * 解法: 迴圈模擬（不使用 null）
+     * 思路:
+     * - 使用 prev 指針記錄「上次訪問的節點」，判斷右子樹是否已訪問。
+     * 時間複雜度: O(n)
+     * 空間複雜度: O(n)
      */
     public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode curr = root;
+        TreeNode prev = null; // 用來判斷右子樹是否已走過
+
+        while (curr != null || !stack.isEmpty()) {
+            // 先一路往左走
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+
+            // 看最上層節點（不馬上彈出）
+            TreeNode node = stack.peek();
+
+            // 若沒有右子樹(null) or 右子樹已處理完(上個節點prev) => 才會處理目前節點。
+            if (node.right == null || node.right == prev) {
+                result.add(node.val); // 左右皆訪問完，處理中節點
+                stack.pop();
+                prev = node;  // 標記這個節點處理過
+                // 不再往下走
+            } else {
+                // 尚未訪問右子樹，進入右子樹
+                curr = node.right;
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * 解法: 迭代 + 空指針標記法 （推薦：易於理解）
+     * 思路:
+     * - 使用「空指針 null 作為已訪問中節點的標記」來模擬遞歸的控制流。
+     * - 步驟為：中 → 右 → 左（放入棧中） + Null 標記 → 回到中節點處理。
+     * 複雜度:
+     * - 時間複雜度: O(n)
+     * - 空間複雜度: O(n)（棧空間最壞情況為樹深度）
+     */
+    public List<Integer> postorderTraversalNull(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
 
@@ -47,14 +93,18 @@ public class ID145BinaryTreePostorderTraversal {
     }
 
     /**
-     * 使用迭代實現後序遍歷
+     * 解法: 先序反轉法（簡單快速）
+     * 思路: 將「中 → 右 → 左」的結果反轉，即為「左 → 右 → 中」。
+     * 時間複雜度: O(n)
+     * 空間複雜度: O(n)
      */
-    public List<Integer> postorderTraversalIterative(TreeNode root) {
+    public List<Integer> postorderTraversalReversePreorder(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
 
         Deque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root);
+
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             // 處理順序: 中 → 右 → 左
@@ -69,7 +119,7 @@ public class ID145BinaryTreePostorderTraversal {
     }
 
     /**
-     * 使用遞歸實現後序遍歷
+     * 解法: 遞歸 (樹不大時最簡潔好用)
      */
     public List<Integer> postorderTraversalRecursive(TreeNode root) {
         List<Integer> result = new ArrayList<>();
