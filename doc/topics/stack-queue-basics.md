@@ -137,7 +137,7 @@
    - 看下表
 
 ### Java Collection Framework UML 關係圖
-![CollectionFrameworkHierarchyInJava.jpg](img/CollectionFrameworkHierarchyInJava.jpg)
+![CollectionFrameworkHierarchyInJava.jpg](../img/CollectionFrameworkHierarchyInJava.jpg)
 
 ### 底層實作的比較
 

@@ -154,7 +154,7 @@ private void dfs(TreeNode cur, List<List<Integer>> result, int depth) {
 - 作法：
   - DFS 後序遞迴：`max(left, right) + 1`，回傳左右子樹最大深度 + 1。
   - BFS 前序遞迴 + 傳遞參數：層數迴圈記錄 `depth++`，每到一層就更新最大層數。
-- 延伸：[LC559. Maximum Depth of N-ary Tree](daily/day23-2025-05-10.md)
+- 延伸：[LC559. Maximum Depth of N-ary Tree](../daily/day23-2025-05-10.md)
   
 ### LC111 - Minimum Depth of Binary Tree
 

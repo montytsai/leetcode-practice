@@ -16,9 +16,9 @@
 
 | 題號  | 標題                                   | 遍歷順序      | 題目連結                                                                                                                                  |
 |-----|--------------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 144 | Binary Tree Preorder Traversal 前序遍歷  | 中 → 左 → 右 | [ID144BinaryTreePreorderTraversal.java](../src/main/java/io/github/monty/leetcode/binarytree/ID144BinaryTreePreorderTraversal.java)   |
-| 94  | Binary Tree Inorder Traversal 中序遍歷   | 左 → 中 → 右 | [ID94BinaryTreeInorderTraversal.java](../src/main/java/io/github/monty/leetcode/binarytree/ID94BinaryTreeInorderTraversal.java)       |
-| 145 | Binary Tree Postorder Traversal 後續遍歷 | 左 → 右 → 中 | [ID145BinaryTreePostorderTraversal.java](../src/main/java/io/github/monty/leetcode/binarytree/ID145BinaryTreePostorderTraversal.java) |
+| 144 | Binary Tree Preorder Traversal 前序遍歷  | 中 → 左 → 右 | [ID144BinaryTreePreorderTraversal.java](../../src/main/java/io/github/monty/leetcode/binarytree/ID144BinaryTreePreorderTraversal.java)   |
+| 94  | Binary Tree Inorder Traversal 中序遍歷   | 左 → 中 → 右 | [ID94BinaryTreeInorderTraversal.java](../../src/main/java/io/github/monty/leetcode/binarytree/ID94BinaryTreeInorderTraversal.java)       |
+| 145 | Binary Tree Postorder Traversal 後續遍歷 | 左 → 右 → 中 | [ID145BinaryTreePostorderTraversal.java](../../src/main/java/io/github/monty/leetcode/binarytree/ID145BinaryTreePostorderTraversal.java) |
 
 --- 
 
