@@ -1,0 +1,14 @@
+# 全庫換行符統一為 LF（跨 Mac 與 Windows 編輯；Obsidian、IntelliJ、VS Code 都吃 LF）
+# 沒有本檔時，Windows 端 core.autocrlf=true 會讓上百個未改動的檔案假性顯示為 modified
+* text=auto eol=lf
+
+# 二進位檔：一律不做換行符轉換
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.jar  binary

@@ -1,6 +1,8 @@
 
 # 🧱 Stack & Queue 基礎總覽
 
+> 2025 版；2026 年改寫版見 notes/topics/
+
 ## 📌 Stack（堆疊）
 
 - 特性： LIFO（後進先出）

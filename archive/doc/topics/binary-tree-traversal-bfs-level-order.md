@@ -1,5 +1,7 @@
 # Binary Tree - Level Order Traversal
 
+> 2025 版；2026 年改寫版見 notes/topics/
+
 > 整理層序遍歷（Level-order traversal）的內容及相關題型。  
 > 以 LC102 為基礎，根據題目要求彈性變化，彙整共通邏輯與實作技巧。
 

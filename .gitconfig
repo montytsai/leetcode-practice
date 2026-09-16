@@ -1,2 +1,19 @@
+# repo 層的 git 設定。本檔不會自動生效，clone 之後執行一次：
+#
+#   git config --local include.path ../.gitconfig
+#
+# 換行符的實際規則由 .gitattributes 決定（全庫 LF）；這裡是配套的本機行為。
+
+[core]
+  # Windows 預設 autocrlf=true 會在 checkout 時把 LF 轉成 CRLF，
+  # 造成未改動的檔案被誤判為 modified。
+  autocrlf = false
+  eol = lf
+  # 提交前擋下混合換行符
+  safecrlf = true
+  # 中文檔名直接顯示，不轉成八進位跳脫
+  quotepath = false
+
 [i18n]
+  commitEncoding = utf-8
   logOutputEncoding = utf-8
