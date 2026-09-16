@@ -39,4 +39,4 @@ build/
 # 忽略草稿
 /draft/
 # 忽略 LeetCode IntelliJ Plugin 自動生成的內容
-src/leetcode/editor/en/
+archive/src/leetcode/editor/en/

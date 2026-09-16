@@ -1,0 +1,13 @@
+---
+title: "Remove Linked List Elements"
+difficulty: Easy
+topics: [Linked List, Recursion]
+category: 09-linked-list
+order: 1
+source: [Carl]
+platform: LeetCode
+status: ac-unknown
+note: ""
+date_created: 2026-03-10
+date_updated: 2026-03-10
+---
