@@ -11,6 +11,7 @@ Matrix 題把資料放在二維座標中，常見操作包含逐格掃描、四�
 
 ## 已刷題目
 
+- [54. Spiral Matrix](../solutions/21-math-geometry/lc-54-spiral-matrix.md) Medium — 用四邊界收縮讀出螺旋順序，收縮的邊界 guard 是重點。
 - [59. Spiral Matrix II](../solutions/21-math-geometry/lc-59-spiral-matrix-ii.md) Medium — 依邊界逐圈填入二維矩陣。
 - [542. 01 Matrix](../solutions/14-graphs/lc-542-01-matrix.md) Medium — 用 Two-pass DP 或 Multi-source BFS 求每格的最近距離。
 - [733. Flood Fill](../solutions/14-graphs/lc-733-flood-fill.md) Easy — 從起點向四個方向擴散填色。

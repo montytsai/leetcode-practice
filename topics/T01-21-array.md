@@ -1,6 +1,6 @@
 # Array
 
-Array 標籤目前有 75 題已完成；以下依題號列出所有 `status: done` 的對應題解。
+Array 標籤目前有 76 題已完成；以下依題號列出所有 `status: done` 的對應題解。
 
 ## 解題技巧
 
@@ -24,6 +24,7 @@ Array 標籤目前有 75 題已完成；以下依題號列出所有 `status: don
 - [Permutations II](../solutions/12-backtracking/lc-47-permutations-ii.md) Medium
 - [N-Queens](../solutions/12-backtracking/lc-51-n-queens.md) Hard
 - [Maximum Subarray](../solutions/18-greedy/lc-53-maximum-subarray.md) Medium
+- [Spiral Matrix](../solutions/21-math-geometry/lc-54-spiral-matrix.md) Medium
 - [Jump Game](../solutions/18-greedy/lc-55-jump-game.md) Medium
 - [Merge Intervals](../solutions/19-intervals/lc-56-merge-intervals.md) Medium
 - [Insert Interval](../solutions/19-intervals/lc-57-insert-interval.md) Medium
