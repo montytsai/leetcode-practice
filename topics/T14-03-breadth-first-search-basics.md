@@ -4,7 +4,7 @@
 >
 > **講法**：仿李宏毅老師講給修資料結構與演算法的大學生。
 >
-> 理論骨架與插圖取自[代碼隨想錄 — 廣度優先搜索理論基礎](https://programmercarl.com/algo/graph/breadth-first-search-basics.html)（圖片已存本地 `assets/leetcode/bfs/`）。程式碼一律改寫成 Java（原文是 C++）。英文名詞在文末附錄。
+> 理論骨架參考自[代碼隨想錄 — 廣度優先搜索理論基礎](https://programmercarl.com/algo/graph/breadth-first-search-basics.html)；圖解為自行以 mermaid 重繪，非原圖。程式碼一律改寫成 Java（原文是 C++）。英文名詞在文末附錄。
 
 ---
 
@@ -44,11 +44,11 @@ BFS 數的是「幾步」，不是「多少成本」。權重一旦不一樣，�
 
 我們用方格地圖來看，假設每次能走**上下左右**四個方向（不含斜角）。給一個起點 `start`，BFS 的第一步就是往四個方向各走一格：
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/breadth-first-search-basics.html
+![四方向擴散示意圖：start 往上下左右四個方位各走一格](../assets/bfs/t14-03-bfs-01-four-directions.svg)
 
 加上終點 `end` 之後，整個搜索過程長這樣：
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/breadth-first-search-basics.html
+![9x9 網格上的同心圈擴散：start 在正中心，每格標曼哈頓距離，end 在第 4 圈](../assets/bfs/t14-03-bfs-02-rings.svg)
 
 格子上的編號就是**第幾步走到的**：編號 1 是第一步碰到的、編號 2 是第二步碰到的⋯⋯第四步的時候摸到終點。
 
@@ -56,7 +56,7 @@ BFS 數的是「幾步」，不是「多少成本」。權重一旦不一樣，�
 
 ### 有障礙物也一樣
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/breadth-first-search-basics.html
+![同一網格加一道障礙牆：直線曼哈頓距離仍是 4，但實際 BFS 距離繞成 6](../assets/bfs/t14-03-bfs-03-rings-with-obstacle.svg)
 
 圖上只把關鍵節點染色（其他方向沒畫，不然太亂）。加了牆之後，變成第六步才走到終點——但性質不變：**第一次碰到就是最短**。
 

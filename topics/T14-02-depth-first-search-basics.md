@@ -4,7 +4,7 @@
 >
 > **講法**：仿李宏毅老師講給修資料結構與演算法的大學生。
 >
-> 理論骨架與插圖取自[代碼隨想錄 — 深度優先搜索理論基礎](https://programmercarl.com/algo/graph/depth-first-search-basics.html)（圖片已存本地 `assets/leetcode/dfs/`）。程式碼一律改寫成 Java（原文是 C++）。英文名詞在文末附錄。
+> 理論骨架參考自[代碼隨想錄 — 深度優先搜索理論基礎](https://programmercarl.com/algo/graph/depth-first-search-basics.html)；圖解為自行以 mermaid 重繪，非原圖。程式碼一律改寫成 Java（原文是 C++）。英文名詞在文末附錄。
 
 ---
 
@@ -31,7 +31,7 @@
 
 這是一張無向圖，**從節點 1 出發，要找出到節點 6 的所有路徑**。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![六個節點的無向圖，輪輻佈局：外圈 1-2-3-6-5 五邊形，節點 4 在正中心並連到所有其他節點，共 10 條邊。節點 1 標示出發點，節點 6 標示目的地。](../assets/dfs/t14-02-dfs-01-base.svg)
 
 邊寫成文字是：`1—2`、`1—4`、`1—5`、`2—3`、`2—4`、`3—4`、`3—6`、`4—5`、`4—6`、`5—6`。
 
@@ -39,7 +39,7 @@
 
 假設第一次照預設方向走，直接就摸到 6 了：
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![同一張輪輻圖，標示走過的路徑：①節點 1 走到節點 5、②節點 5 走到節點 6，一路衝到終點，其餘邊維持灰色未走過。](../assets/dfs/t14-02-dfs-02-reach-goal.svg)
 
 好，到黃河了。找到一條路徑。**那接下來呢？**
 
@@ -47,7 +47,7 @@
 
 ### 第二步：撤銷剛剛那一步，改走另一條
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![同一張輪輻圖，標示撤銷後改道：①節點 1 走到節點 5、②節點 5 到節點 6 那條邊被撤銷（虛線＋✗）、③改走節點 5 到節點 4、④再走到節點 6。](../assets/dfs/t14-02-dfs-03-undo-first.svg)
 
 看到沒有，路徑 2 被**撤銷**了，改走路徑 3（紅線），一樣也走到 6。
 
@@ -55,17 +55,17 @@
 
 ### 第三步、第四步：一直這樣做下去
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![同一張輪輻圖，繼續撤銷：①1→5、③5→4 維持，④節點 4 到節點 6 那條邊被撤銷，改走⑤4→3、⑥3→6，又找到一條新路徑。](../assets/dfs/t14-02-dfs-04-undo-second.svg)
 
 又找到一條，又到黃河，再回頭：撤銷路徑 4，改走路徑 5。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![同一張輪輻圖，走到死路：①1→5、③5→4、⑤4→3 維持，⑥節點 3 到節點 6 那條邊被撤銷，改走⑦3→2，節點 2 畫成死路樣式，旁註⑧鄰居 1、3、4 都走過了。](../assets/dfs/t14-02-dfs-05-dead-end.svg)
 
 這次撤銷路徑 6 改走路徑 7、8、9——結果發現死路一條，**走到的全是自己走過的節點**。
 
 ### 第五步：這一層試完了，往上退
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![同一張輪輻圖，往上退一層：①1→5、③5→4 維持，⑤節點 4 到節點 3 那條邊被撤銷，改走⑩4→2，節點 2 畫成死路樣式，旁註⑪鄰居都走過、繼續往上退。](../assets/dfs/t14-02-dfs-06-backtrack-up.svg)
 
 節點 2 那邊的路、節點 3 那邊的路都試完了，那就只能**再往上退一層**，撤銷當初在節點 4 做的選擇（撤銷路徑 5），改走路徑 10。
 
@@ -183,7 +183,7 @@ for (int next : g.get(cur)) {
 
 這是最多人卡住的地方，我們用圖回答：
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/depth-first-search-basics.html
+![上下對照兩個線性小圖：上半「撤銷前」節點 1→5→6 直接走到終點；下半「撤銷後」節點 1→5 維持，5→6 那條邊已撤銷（虛線＋✗），改走 5→4→6。](../assets/dfs/t14-02-dfs-07-undo-comparison.svg)
 
 路徑 2 已經走到目的地 6 了。那**路徑 2 要怎麼變成路徑 3**？
 

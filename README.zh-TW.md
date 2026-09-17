@@ -22,6 +22,7 @@ leetcode-practice/
  ├── _solution-template.md               # 題解格式、frontmatter 規格與寫作口徑
  ├── solutions/<NN-主題>/                # 一題一檔，_template.md 是新增用的骨架
  ├── topics/                             # 主題筆記，_index.md 是導航
+ ├── assets/                             # 主題筆記引用的自繪 SVG 圖解
  ├── scripts/                            # 同步與統計腳本
  └── archive/                            # 2025 年舊資產，已停止新增
      ├── pom.xml ＋ src/                 # Maven 專案：Java 解法與 JUnit 測試

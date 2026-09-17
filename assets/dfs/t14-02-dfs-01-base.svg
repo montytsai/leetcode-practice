@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e53935"/>
+    </marker>
+  </defs>
+
+  <!-- 10 條邊，全部未走過 -->
+  <line x1="250" y1="70"  x2="393" y2="174" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="393" y1="174" x2="338" y2="341" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="338" y1="341" x2="162" y2="341" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="162" y1="341" x2="107" y2="174" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="107" y1="174" x2="250" y2="70"  stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="250" y1="220" x2="250" y2="70"  stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="250" y1="220" x2="393" y2="174" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="250" y1="220" x2="338" y2="341" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="250" y1="220" x2="107" y2="174" stroke="#cfd8dc" stroke-width="2"/>
+  <line x1="250" y1="220" x2="162" y2="341" stroke="#cfd8dc" stroke-width="2"/>
+
+  <!-- 節點 -->
+  <circle cx="250" cy="70"  r="26" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.5"/>
+  <circle cx="393" cy="174" r="26" fill="#ffffff" stroke="#90a4ae" stroke-width="2.5"/>
+  <circle cx="338" cy="341" r="26" fill="#ffffff" stroke="#90a4ae" stroke-width="2.5"/>
+  <circle cx="162" cy="341" r="26" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.5"/>
+  <circle cx="107" cy="174" r="26" fill="#ffffff" stroke="#90a4ae" stroke-width="2.5"/>
+  <circle cx="250" cy="220" r="26" fill="#ffffff" stroke="#90a4ae" stroke-width="2.5"/>
+
+  <text x="250" y="70"  font-size="18" fill="#263238" text-anchor="middle" dy=".35em">1</text>
+  <text x="393" y="174" font-size="18" fill="#263238" text-anchor="middle" dy=".35em">2</text>
+  <text x="338" y="341" font-size="18" fill="#263238" text-anchor="middle" dy=".35em">3</text>
+  <text x="162" y="341" font-size="18" fill="#263238" text-anchor="middle" dy=".35em">6</text>
+  <text x="107" y="174" font-size="18" fill="#263238" text-anchor="middle" dy=".35em">5</text>
+  <text x="250" y="220" font-size="18" fill="#263238" text-anchor="middle" dy=".35em">4</text>
+
+  <!-- 出發點／目的地標籤 -->
+  <line x1="250" y1="44" x2="250" y2="28" stroke="#333333" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="205" y="6" width="90" height="20" rx="4" fill="#f9f9f9" stroke="#333333" stroke-dasharray="4 3"/>
+  <text x="250" y="16" font-size="13" fill="#263238" text-anchor="middle" dy=".35em">🚩 出發點</text>
+
+  <line x1="162" y1="367" x2="162" y2="383" stroke="#333333" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="112" y="385" width="100" height="20" rx="4" fill="#f9f9f9" stroke="#333333" stroke-dasharray="4 3"/>
+  <text x="162" y="395" font-size="13" fill="#263238" text-anchor="middle" dy=".35em">🎯 目的地</text>
+</svg>

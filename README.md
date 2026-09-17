@@ -22,6 +22,7 @@ leetcode-practice/
  ├── _solution-template.md               # Solution format, frontmatter spec, writing guidelines
  ├── solutions/<NN-topic>/               # One file per problem; _template.md is the skeleton
  ├── topics/                             # Topic notes; _index.md is the map
+ ├── assets/                             # Hand-drawn SVG diagrams referenced by topic notes
  ├── scripts/                            # Sync and statistics scripts
  └── archive/                            # 2025 material, no longer extended
      ├── pom.xml + src/                  # Maven project: Java solutions and JUnit tests

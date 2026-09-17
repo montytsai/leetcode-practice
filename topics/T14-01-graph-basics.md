@@ -4,7 +4,7 @@
 >
 > **講法**：仿李宏毅老師講給修資料結構與演算法的大學生——先講「這東西到底在幹嘛」，再講細節，能用比喻就不用定義。
 >
-> 理論骨架與插圖取自[代碼隨想錄 — 圖論理論基礎](https://programmercarl.com/algo/graph/graph-theory-basics.html)（圖片已存本地 `assets/leetcode/graph-theory/`，原圖標註為簡體）。英文名詞與面試講法在文末附錄，正文不夾雜。
+> 理論骨架參考自[代碼隨想錄 — 圖論理論基礎](https://programmercarl.com/algo/graph/graph-theory-basics.html)；圖解為自行以 mermaid 重繪，非原圖。英文名詞與面試講法在文末附錄，正文不夾雜。
 
 ---
 
@@ -65,19 +65,53 @@
 
 邊沒有方向，能過去就能回來。就是雙向道。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --- n2((2))
+    n1 --- n3((3))
+    n2 --- n3
+    n2 --- n4((4))
+    n2 --- n6((6))
+    n3 --- n4
+    n4 --- n5((5))
+    n5 --- n6((6))
+    n5 --- n7((7))
+    n6 --- n7
+```
 
 ### 有向圖 (directed graph)
 
 邊有方向，只能照箭頭走。這個最好的例子是 Instagram 的追蹤——**你追蹤她，不代表她追蹤你**。這件事在生活中可能有點感傷，但在圖論裡它就只是一條單向的邊。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --> n2((2))
+    n1 --> n3((3))
+    n2 --> n3
+    n2 --> n4((4))
+    n2 --> n6((6))
+    n3 --> n4
+    n4 --> n5((5))
+    n5 --> n7((7))
+    n6 --> n7
+```
 
 ### 加權圖 (weighted graph)
 
 邊上面多一個數字，代表走這條路的「代價」——距離、票價、時間，看題目怎麼定義。下面這張是**加權有向圖**，無向圖當然也可以加權。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) -->|"1"| n2((2))
+    n1 -->|"4"| n3((3))
+    n2 -->|"2"| n3
+    n2 -->|"5"| n4((4))
+    n2 -->|"4"| n6((6))
+    n3 -->|"2"| n4
+    n4 -->|"3"| n5((5))
+    n5 -->|"4"| n7((7))
+    n6 -->|"9"| n7
+```
 
 這邊要注意一下：**沒有權重的圖，等於每條邊的權重都是 1。** 這句話現在聽起來像廢話，但它是等一下「為什麼無權圖用 BFS、有權圖要用 Dijkstra」的關鍵，所以先記著。
 
@@ -97,7 +131,19 @@
 
 > **度 = 這個點身上插了幾條線。**
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --- n2((2))
+    n1 --- n4((4))
+    n1 --- n5((5))
+    n2 --- n3((3))
+    n2 --- n4
+    n3 --- n4
+    n3 --- n6((6))
+    n4 --- n5
+    n4 --- n6
+    n5 --- n6
+```
 
 我們把上面這張圖的邊寫成文字，你自己數一次：
 
@@ -121,7 +167,14 @@
 - **出度 (out-degree)**：從這個點**出發**的邊有幾條
 - **入度 (in-degree)**：**指向**這個點的邊有幾條
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --> n2((2))
+    n1 --> n3((3))
+    n2 --> n3
+    n3 --> n4((4))
+    n4 --> n5((5))
+```
 
 節點 3：兩條邊指向它、一條從它出發 → 入度 2、出度 1。
 節點 1：沒有人指向它 → 入度 0、出度 2。
@@ -144,11 +197,35 @@
 
 無向圖裡，任兩個點都走得到彼此，整張圖連成一坨。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --- n2((2))
+    n1 --- n4((4))
+    n1 --- n5((5))
+    n2 --- n3((3))
+    n2 --- n4
+    n3 --- n4
+    n3 --- n6((6))
+    n4 --- n5
+    n4 --- n6
+    n5 --- n6
+```
 
 有點到不了別人，那就是**非連通圖**。下面這張，節點 1 走不到節點 4：
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    subgraph comp1["分量一"]
+        n1((1)) --- n2((2))
+        n1 --- n5((5))
+    end
+    subgraph comp2["分量二"]
+        n3((3)) --- n4((4))
+        n3 --- n6((6))
+        n4 --- n6
+    end
+	comp1 ~~~ comp2
+```
 
 ### 強連通圖 (strongly connected graph)
 
@@ -156,11 +233,25 @@
 
 你看下面這張圖，第一眼會覺得「每個點不是都連著嗎」——但它**不是**強連通圖。因為 `1` 到得了 `5`，`5` 卻回不到 `1`。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --> n2((2))
+    n1 --> n3((3))
+    n2 --> n3
+    n3 --> n4((4))
+    n4 --> n5((5))
+```
 
 這張才是。每個點都繞得回來：
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    n1((1)) --> n2((2))
+    n2 --> n5((5))
+    n5 --> n4((4))
+    n4 --> n3((3))
+    n3 --> n1
+```
 
 一句話記住這組差別：
 
@@ -170,7 +261,19 @@
 
 一張斷掉的圖會分成好幾坨，**每一坨就是一個連通分量**。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph LR
+    subgraph comp1["連通分量一"]
+        n1((1)) --- n2((2))
+        n1 --- n5((5))
+    end
+    subgraph comp2["連通分量二"]
+        n3((3)) --- n4((4))
+        n3 --- n6((6))
+        n4 --- n6
+    end
+    comp1 ~~~ comp2
+```
 
 上圖有兩個連通分量：`{1, 2, 5}` 和 `{3, 4, 6}`。
 
@@ -184,7 +287,22 @@
 
 有向圖裡「極大的強連通子圖」。同樣的邏輯，只是把「連得到」換成「互相連得到」。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+graph TB
+    subgraph notscc["不是強連通分量"]
+        n6((6)) --> n7((7))
+        n6 --> n8((8))
+        n7 --> n8
+    end
+    subgraph isscc["是強連通分量"]
+        n1((1)) --> n2((2))
+        n2 --> n5((5))
+        n5 --> n4((4))
+        n4 --> n3((3))
+        n3 --> n1
+    end
+    notscc ~~~ isscc
+```
 
 - `{1, 2, 3, 4, 5}` **是**：`1→2→5→4→3→1` 繞得回來，而且已經吃到飽。
 - `{6, 7, 8}` **不是**：`8` 回不到 `6`，本身就不強連通。
@@ -216,7 +334,12 @@
 
 最直覺的做法——把每條邊記成一列就好。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+flowchart TD
+    subgraph edgelist["一列一條邊"]
+        node_table["<table border='1' style='border-collapse: collapse; text-align: center;'><tr><td style='width: 50px;'>6</td><td style='width: 50px;'>7</td></tr><tr><td>6</td><td>8</td></tr><tr><td>7</td><td>8</td></tr><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>5</td></tr><tr><td>5</td><td>4</td></tr><tr><td>4</td><td>3</td></tr><tr><td>3</td><td>1</td></tr></table>"]
+    end
+```
 
 第一列 `6 7` 就是「6 指向 7」。有 `n` 條邊就開 `n × 2` 的陣列。
 
@@ -235,7 +358,24 @@ LeetCode 很愛丟一個 `int[][] edges` 給你，而你拿到之後的第一個
 
 這個東西像什麼？像**班級座位表**——任兩個人之間的關係，你查一格就知道。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+|       | **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** |
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| **0** | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
+| **1** | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
+| **2** | 0     | 0     | 0     | 0     | 0     | ==6== | 0     | 0     |
+| **3** | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
+| **4** | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
+| **5** | 0     | 0     | ==6== | 0     | 0     | 0     | 0     | 0     |
+| **6** | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
+| **7** | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
+
+```mermaid
+graph LR
+    n2((節點 2)) -->|"g(2,5) = 6"| n5((節點 5))
+    n5 -->|"g(5,2) = 6"| n2
+    n2 -.-> O["查一格＝O(1)，像班級座位表"]
+    n5 -.-> O
+```
 
 ```java
 int[][] g = new int[n][n];
@@ -252,9 +392,43 @@ g[2][5] = g[5][2] = 6;              // 無向圖：2 與 5 互通，兩格都要
 
 這個像什麼？像**通訊錄**——每個人底下列出他認識的人，認識幾個記幾個，不認識的一格都不佔。
 
-> 🖼 圖待重繪（mermaid，B94 階段四）——參考原圖：https://programmercarl.com/algo/graph/graph-theory-basics.html
+```mermaid
+flowchart LR
+    subgraph arr["Array"]
+        direction TB
+        idx1["1"]
+        idx2["2"]
+        idx3["3"]
+        idx4["4"]
+        idx5["5"]
+    end
 
-（原圖是簡體：「数组」＝陣列、「链表」＝鏈結串列。）
+    subgraph list["Linked List"]
+        direction TB
+        subgraph row1[" "]
+            direction LR
+            a1["3"] --> a2["5"]
+        end
+        subgraph row2[" "]
+            direction LR
+            b1["4"] --> b2["3"] --> b3["5"]
+        end
+        subgraph row3[" "]
+            direction LR
+            c1["4"]
+        end
+        subgraph row4[" "]
+            direction LR
+            d1["1"]
+        end
+    end
+
+    %% link 2 side
+    idx1 --> a1
+    idx2 --> b1
+    idx3 --> c1
+    idx4 --> d1
+```
 
 這張圖在講的是：
 
