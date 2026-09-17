@@ -6,7 +6,7 @@
 
 共 259 題 ｜ done: 189 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 150 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-solo 1 ｜ ac-unknown 173 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 13 ｜ ac-solo 2 ｜ ac-unknown 172 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -159,7 +159,7 @@
 | [145](https://leetcode.com/problems/binary-tree-postorder-traversal/) | Binary Tree Postorder Traversal | Easy | Carl | ac-unknown | [🔗](solutions/10-trees/lc-145-binary-tree-postorder-traversal.md) |
 | [102](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Binary Tree Level Order Traversal | Medium | Grind75, Carl | ac-assisted | [🔗](solutions/10-trees/lc-102-binary-tree-level-order-traversal.md) |
 | [107](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) | Binary Tree Level Order Traversal II | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-107-binary-tree-level-order-traversal-ii.md) |
-| [199](https://leetcode.com/problems/binary-tree-right-side-view/) | Binary Tree Right Side View | Medium | Carl, LeetCode75 | ac-unknown | [🔗](solutions/10-trees/lc-199-binary-tree-right-side-view.md) |
+| [199](https://leetcode.com/problems/binary-tree-right-side-view/) | Binary Tree Right Side View | Medium | Carl, LeetCode75 | ac-solo | [🔗](solutions/10-trees/lc-199-binary-tree-right-side-view.md) |
 | [637](https://leetcode.com/problems/average-of-levels-in-binary-tree/) | Average of Levels in Binary Tree | Easy | Carl | ac-unknown | [🔗](solutions/10-trees/lc-637-average-of-levels-in-binary-tree.md) |
 | [429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) | N-ary Tree Level Order Traversal | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-429-n-ary-tree-level-order-traversal.md) |
 | [515](https://leetcode.com/problems/find-largest-value-in-each-tree-row/) | Find Largest Value in Each Tree Row | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-515-find-largest-value-in-each-tree-row.md) |
