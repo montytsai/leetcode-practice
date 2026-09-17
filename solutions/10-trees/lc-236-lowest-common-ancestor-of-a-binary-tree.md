@@ -97,6 +97,71 @@ class Solution {
 
 替代法(不同 trade-off)：用一個 HashMap 記錄從 root 走訪時每個節點的 parent(先 BFS 或 DFS 建出 parent map)，再從 p 往上收集所有祖先存進一個 Set，最後從 q 往上走，第一個出現在該 Set 裡的節點就是 LCA。這個做法空間固定是 `O(n)`(parent map + visited set)，比遞迴版費空間，但邏輯是「兩條鏈找交點」，對還沒建立起「後序回傳值代表什麼」這層抽象直覺的人來說更直觀。之後想換個角度鞏固這題，可以練這個版本。
 
+---
+
+## 2025 初刷版（Day28，2025-05-15）
+
+*原文見 [archive/doc/daily/day28-2025-05-15.md](../../archive/doc/daily/day28-2025-05-15.md)，已停更，內容按當時所寫原樣搬入*
+
+### LC236. Lowest Common Ancestor of a Binary Tree
+
+#### 題目說明
+- 給定一棵二元樹，和其中兩個節點 `p` 與 `q`。
+- 找出並回傳它們的最近公共祖先（LCA）。
+- 注意：祖先可以是節點本身。
+
+---
+
+#### 解法：DFS 遞迴（後序遍歷自底向上）
+
+##### 思路：邏輯與步驟
+- 使用後序遍歷（postorder）自底向上，從左右子樹遞迴尋找 `p` 和 `q`。
+- 若某節點的左、右子樹分別出現 `p` 和 `q`，則該節點就是 LCA。
+- 若其中一邊找到兩者之一，另一邊為 null，則回傳非 null 節點（可能是 `p`、`q` 或其祖先）。
+- 若當前節點本身為 `p` 或 `q`，直接回傳（即使它尚未遇到另一個節點）。
+
+##### 重點：兩種情況說明
+
+- 範例如：
+  ```
+      3
+     / \
+    5   1
+   / \ / \
+  6  2 4  8
+  ```
+
+###### ✅ 情況一：p 和 q 分別出現在左右子樹
+  - 若 `p = 5`, `q = 1`，那麼節點 3 左右子樹各自找到 `p` 與 `q`，3 為最近公共祖先。
+
+###### ✅ 情況二：p 或 q 本身就是最近公共祖先
+  - `p = 5`, `q = 4`，其中 4 是 5 的子孫。
+  - 當走到節點 5 時，發現自己就是 `p`，即使還未遍歷到 `q`，也會先回傳 `p`，最終由其上層確認是否為 LCA。
+
+##### 為什麼這樣的遞迴可以涵蓋兩種情況？
+- 因為遞迴會：
+  - 把每個節點視為潛在答案，並從左右子樹回傳結果。
+  - 利用返回值（left/right）向上彙整訊息，一步步傳遞哪邊找到 p/q。
+  - 最早同時收集到兩者的節點，就是他們最近的公共祖先。
+
+##### 複雜度分析
+- 時間複雜度：O(n)，每個節點最多遍歷一次。
+- 空間複雜度：O(h)，h 為樹高，遞迴呼叫堆疊。
+
+---
+
+#### 筆記
+- 遞迴的返回值扮演「訊息向上傳遞」的角色，是整體解法關鍵。
+- 若目標節點是另一個節點的祖先，遞迴會直接回傳該祖先節點作為答案。
+
+---
+
+#### Java 程式碼連結
+- 題目實作：[ID236LowestCommonAncestorOfABinaryTree.java](../../archive/src/main/java/io/github/monty/leetcode/binarytree/ID236LowestCommonAncestorOfABinaryTree.java)
+- 單元測試：[ID236LowestCommonAncestorOfABinaryTreeTest.java](../../archive/src/test/java/io/github/monty/leetcode/binarytree/ID236LowestCommonAncestorOfABinaryTreeTest.java)
+
+---
+
 ## 相關
 
 - [Binary Tree](../../topics/T10-21-binary-tree.md) ── 後序回傳、由當前節點角色判斷 LCA 的範例

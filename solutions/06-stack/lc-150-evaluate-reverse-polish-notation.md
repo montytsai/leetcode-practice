@@ -110,3 +110,39 @@ class Solution {
 ### Optimality
 
 這個解法在**時間複雜度**上是最佳的 `O(n)`，因為每個 token 至少要讀取一次。在不修改輸入的前提下，任意合法 RPN 可以先出現線性數量的 operand，因此最壞 `O(n)` stack 空間也無法普遍降得更低。唯一值得考慮的替代寫法是直接用 `switch` 處理 token 並使用 `left`／`right` 命名；它只改善**可讀性與面試表達**，時間與空間不變，不需要另列第二個演算法。
+
+---
+
+## 2025 初刷版（Day16，2025-05-03）
+
+*原文見 [archive/doc/daily/day16-2025-05-03.md](../../archive/doc/daily/day16-2025-05-03.md)，已停更，內容按當時所寫原樣搬入*
+
+### 150. Evaluate Reverse Polish Notation 重點整理
+
+#### 題目說明
+- 給定一個字串陣列 `tokens`，表示一個後綴表示式（Reverse Polish Notation, RPN），請回傳其整數計算結果。
+- 運算過程保證合法，不會出現除以零。
+- 有效運算子為：`+`、`-`、`*`、`/`。
+- 除法為**整數除法**，結果需**向零取整**（Java 預設行為）。
+
+---
+
+#### 解法：使用 Stack 模擬後綴運算
+
+##### 思路
+- 使用一個堆疊 `stack`，掃描每個 token。
+  - 若為數字，轉為整數後推入堆疊。
+  - 若為運算子，彈出兩個操作數，依照對應的運算後再將結果推入堆疊。
+- 最終堆疊剩下的即為答案。
+
+##### 筆記
+- 題目僅要求整數運算，不需處理小數。 
+  - 若為實際計算小數，則需使用 Double.parseDouble() 並轉為浮點數處理。
+
+##### 複雜度分析
+- 時間複雜度：O(n)，每個 token 處理一次。
+- 空間複雜度：O(n)，堆疊最多存放全部數字。
+
+#### Java 程式碼連結
+
+- [ID150EvaluateReversePolishNotation.java](../../archive/src/main/java/io/github/monty/leetcode/stackqueue/ID150EvaluateReversePolishNotation.java)

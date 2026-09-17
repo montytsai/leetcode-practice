@@ -116,6 +116,44 @@ class Solution {
 
 唯一值得一提的替代寫法是把剪枝判斷從函式入口搬到 for 迴圈裡提前 `break`:掃到第一個超過剩餘 target 的候選值就直接跳出迴圈,不再進入遞迴。漸進複雜度不變,差別是常數因子更好——省下確定要剪掉的分支所多花的一次函式呼叫。這是實作細節層級的取捨(metric:constant factor / 可讀性),不是演算法等級的差異,面試時兩種寫法都會被接受。
 
+---
+
+## 2025 初刷版（Day43，2025-05-30）
+
+*原文見 [archive/doc/daily/day43-2025-05-30.md](../../archive/doc/daily/day43-2025-05-30.md)，已停更，內容按當時所寫原樣搬入*
+
+### LC39. Combination Sum
+
+#### 題目說明
+
+- 給一個沒有重複元素的整數陣列 `candidates`，和一個目標值 `target`
+- 找出所有可能的結果列表，讓元素的和為 target，元素可重複使用，結果不能重複
+
+---
+
+#### 解法一：回歸法 (Backtracking)
+
+##### 思路：構建 DFS 親子結點的算法樹
+
+- 每個等級在 for-loop 中從 `start` 開始循環，以防止重複計算 
+- 當 sum 達到 target 時，即為合法解 
+- 可重複使用同一整數，故 recursive call 依然傳入 i 而非 i+1 
+- 為了提早截止無效結果，首先 sort 並進行 pruning (減少路徑的關鍵，不然很容易 TLE)
+
+##### 複雜度分析
+
+- 時間：`O(2^t)`，與結果累積數有關
+- 空間：`O(t)`，為 recursion stack 的深度
+
+---
+
+#### Java 程式碼連結
+
+- 題目實作：[ID39CombinationSum.java](../../archive/src/main/java/io/github/monty/leetcode/backtracking/ID39CombinationSum.java)
+- 單元測試：[ID39CombinationSumTest.java](../../archive/src/test/java/io/github/monty/leetcode/backtracking/ID39CombinationSumTest.java)
+
+---
+
 ## 相關
 
 - [Backtracking](../../topics/T12-21-backtracking.md) — 元素可重複取的第一題:遞迴時 `startIndex` 不加一
