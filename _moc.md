@@ -6,7 +6,7 @@
 
 共 259 題 ｜ done: 189 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 150 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-unknown 174 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 13 ｜ ac-solo 1 ｜ ac-unknown 173 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -224,7 +224,7 @@
 | [40](https://leetcode.com/problems/combination-sum-ii/) | Combination Sum II | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-40-combination-sum-ii.md) |
 | [131](https://leetcode.com/problems/palindrome-partitioning/) | Palindrome Partitioning | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-131-palindrome-partitioning.md) |
 | [93](https://leetcode.com/problems/restore-ip-addresses/) | Restore IP Addresses | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-93-restore-ip-addresses.md) |
-| [78](https://leetcode.com/problems/subsets/) | Subsets | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-78-subsets.md) |
+| [78](https://leetcode.com/problems/subsets/) | Subsets | Medium | Carl | ac-solo | [🔗](solutions/12-backtracking/lc-78-subsets.md) |
 | [90](https://leetcode.com/problems/subsets-ii/) | Subsets II | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-90-subsets-ii.md) |
 | [491](https://leetcode.com/problems/non-decreasing-subsequences/) | Non-decreasing Subsequences | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-491-non-decreasing-subsequences.md) |
 | [46](https://leetcode.com/problems/permutations/) | Permutations | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-46-permutations.md) |
