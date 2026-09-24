@@ -1,10 +1,15 @@
 ---
-title: "Validate Binary Search Tree"
+title: Validate Binary Search Tree
 difficulty: Medium
-topics: [Binary Tree, Tree, Depth-First Search, Binary Search Tree]
+topics:
+  - Binary Tree
+  - Tree
+  - Depth-First Search
+  - Binary Search Tree
 category: 10-trees
 order: 28
-source: [Carl]
+source:
+  - Carl
 platform: LeetCode
 url: https://leetcode.com/problems/validate-binary-search-tree/
 status: ac-unknown

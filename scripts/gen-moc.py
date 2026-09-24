@@ -37,12 +37,18 @@ TITLES = {
 
 def frontmatter(path):
     fm = {}
+    k = None
     with io.open(path, encoding='utf-8') as fh:
         if fh.readline().strip() != '---':
             return fm
         for line in fh:
             if line.strip() == '---':
                 break
+            # Obsidian 屬性編輯器會把 [a, b] 改寫成多行「  - a」區塊 list
+            item = re.match(r'^\s+-\s+(.*?)\s*$', line)
+            if item and k is not None and (fm[k] == '' or isinstance(fm[k], list)):
+                fm[k] = (fm[k] or []) + [item.group(1).strip('"\'')]
+                continue
             m = re.match(r'^([A-Za-z_][\w-]*):\s*(.*?)\s*$', line)
             if not m:
                 continue
