@@ -19,7 +19,7 @@ The root holds only what is current.
 leetcode-practice/
  ├── _moc.md                             # Problem index (generated — do not edit by hand)
  ├── _solution-template.md               # Solution format, frontmatter spec, writing guidelines
- ├── solutions/<NN-topic>/               # One file per problem; _template.md is the skeleton
+ ├── solutions/<NN-topic>/               # One file per problem
  ├── topics/                             # Topic notes; _index.md is the map
  ├── assets/                             # Hand-drawn SVG diagrams referenced by topic notes
  ├── scripts/                            # Sync and statistics scripts

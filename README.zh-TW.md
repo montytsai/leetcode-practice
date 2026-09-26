@@ -19,7 +19,7 @@ root 只放現行主體。
 leetcode-practice/
  ├── _moc.md                             # 刷題總表（機器重生，勿手改）
  ├── _solution-template.md               # 題解格式、frontmatter 規格與寫作口徑
- ├── solutions/<NN-主題>/                # 一題一檔，_template.md 是新增用的骨架
+ ├── solutions/<NN-主題>/                # 一題一檔
  ├── topics/                             # 主題筆記，_index.md 是導航
  ├── assets/                             # 主題筆記引用的自繪 SVG 圖解
  ├── scripts/                            # 同步與統計腳本
