@@ -8,7 +8,7 @@ source: [Grind75, Extra]
 platform: LeetCode
 url: https://leetcode.com/problems/reverse-bits/
 status: review
-note: ""
+note: "看最佳解"
 date_created: 2026-08-11
 date_updated: 2026-08-11
 ---

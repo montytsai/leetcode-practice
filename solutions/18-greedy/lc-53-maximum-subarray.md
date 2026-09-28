@@ -7,7 +7,7 @@ order: 3
 source: [Extra]
 platform: LeetCode
 status: review
-note: ""
+note: "練習用 Divide and Conquer 改寫"
 date_created: 2026-03-26
 date_updated: 2026-08-19
 ---
