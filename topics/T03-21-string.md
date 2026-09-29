@@ -55,6 +55,7 @@ num = num * 10 + digit;
 - [3. Longest Substring Without Repeating Characters](../solutions/04-sliding-window/lc-3-longest-substring-without-repeating-characters.md) Medium — 用滑動窗口與字元最後出現位置維持無重複子字串。
 - [8. String to Integer (atoi)](../solutions/03-string/lc-8-string-to-integer-atoi.md) Medium — 固定流程的逐字元解析，重點在乘 10 之前預判 `int` 溢位並夾到邊界值。
 - [14. Longest Common Prefix](../solutions/01-arrays-hashing/lc-14-longest-common-prefix.md) Easy — 排序後只比較字典序最小與最大的字串，並確認 `substring(0, i)` 的右邊界不包含。
+- [17. Letter Combinations of a Phone Number](../solutions/12-backtracking/lc-17-letter-combinations-of-a-phone-number.md) Medium — 用 `StringBuilder` 累積路徑，`setLength(len)` 做字串層級的回溯還原。
 - [28. Find the Index of the First Occurrence in a String](../solutions/01-arrays-hashing/lc-28-find-the-index-of-the-first-occurrence-in-a-string.md) Easy — 在字串中尋找目標片段的起始位置。
 - [151. Reverse Words in a String](../solutions/02-two-pointers/lc-151-reverse-words-in-a-string.md) Medium — 處理空白與單字順序。
 - [344. Reverse String](../solutions/02-two-pointers/lc-344-reverse-string.md) Easy — 用雙指標交換字元。

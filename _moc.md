@@ -6,7 +6,7 @@
 
 共 259 題 ｜ done: 189 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 150 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-solo 4 ｜ ac-unknown 170 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 13 ｜ ac-solo 5 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -219,7 +219,7 @@
 |---|---|---|---|---|---|
 | [77](https://leetcode.com/problems/combinations/) | Combinations | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-77-combinations.md) |
 | [216](https://leetcode.com/problems/combination-sum-iii/) | Combination Sum III | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-216-combination-sum-iii.md) |
-| [17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Letter Combinations of a Phone Number | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-17-letter-combinations-of-a-phone-number.md) |
+| [17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Letter Combinations of a Phone Number | Medium | Carl | ac-solo | [🔗](solutions/12-backtracking/lc-17-letter-combinations-of-a-phone-number.md) |
 | [39](https://leetcode.com/problems/combination-sum/) | Combination Sum | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-39-combination-sum.md) |
 | [40](https://leetcode.com/problems/combination-sum-ii/) | Combination Sum II | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-40-combination-sum-ii.md) |
 | [131](https://leetcode.com/problems/palindrome-partitioning/) | Palindrome Partitioning | Medium | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-131-palindrome-partitioning.md) |
