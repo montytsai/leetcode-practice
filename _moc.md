@@ -6,7 +6,7 @@
 
 共 259 題 ｜ done: 189 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 150 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-solo 3 ｜ ac-unknown 171 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 13 ｜ ac-solo 4 ｜ ac-unknown 170 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -177,7 +177,7 @@
 | [112](https://leetcode.com/problems/path-sum/) | Path Sum | Easy | Carl | ac-unknown | [🔗](solutions/10-trees/lc-112-path-sum.md) |
 | [113](https://leetcode.com/problems/path-sum-ii/) | Path Sum II | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-113-path-sum-ii.md) |
 | [106](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | Construct Binary Tree from Inorder and Postorder Traversal | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-106-construct-binary-tree-from-inorder-and-postorder-traversal.md) |
-| [105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | Construct Binary Tree from Preorder and Inorder Traversal | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-105-construct-binary-tree-from-preorder-and-inorder-traversal.md) |
+| [105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | Construct Binary Tree from Preorder and Inorder Traversal | Medium | Carl | ac-solo | [🔗](solutions/10-trees/lc-105-construct-binary-tree-from-preorder-and-inorder-traversal.md) |
 | [654](https://leetcode.com/problems/maximum-binary-tree/) | Maximum Binary Tree | Medium | Carl | ac-unknown | [🔗](solutions/10-trees/lc-654-maximum-binary-tree.md) |
 | [617](https://leetcode.com/problems/merge-two-binary-trees/) | Merge Two Binary Trees | Easy | Carl | ac-unknown | [🔗](solutions/10-trees/lc-617-merge-two-binary-trees.md) |
 | [700](https://leetcode.com/problems/search-in-a-binary-search-tree/) | Search in a Binary Search Tree | Easy | Carl, LeetCode75 | ac-unknown | [🔗](solutions/10-trees/lc-700-search-in-a-binary-search-tree.md) |
