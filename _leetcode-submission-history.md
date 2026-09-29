@@ -2,11 +2,15 @@
 
 [_moc](_moc.md) 的 `status` 以本表為準。來源＝LeetCode 官網 Practice History；提交次數高＝當時卡比較久，適合排複習。
 
-`scripts/lc-sync-history.py` 會增量補入新紀錄(開工時自動跑)。**2026-08-02 以前是人工核對過的,不要動**。
+`scripts/lc-sync-history.py` 會增量補入新紀錄(定期自動跑)。**2026-08-02 以前是人工核對過的,不要動**。
 自動同步拿得到的只有:**最近 20 筆、只有 AC、沒有提交次數**(該欄填 `-`)。刷超過 20 題沒同步會漏,要完整資料得上官網手動補。
 
 | 日期 | 題目 | 難度 | 結果 | 提交次數 |
 |---|---|---|---|---|
+| 2026-09-29 | 17. Letter Combinations of a Phone Number | Med. | Accepted | - |
+| 2026-09-24 | 105. Construct Binary Tree from Preorder and Inorder Traversal | Med. | Accepted | - |
+| 2026-09-24 | 11. Container With Most Water | Med. | Accepted | - |
+| 2026-09-20 | 234. Palindrome Linked List | Easy | Accepted | - |
 | 2026-09-15 | 78. Subsets | Med. | Accepted | - |
 | 2026-09-15 | 54. Spiral Matrix | Med. | Accepted | - |
 | 2026-09-14 | 199. Binary Tree Right Side View | Med. | Accepted | - |

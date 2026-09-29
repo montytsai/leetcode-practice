@@ -1,7 +1,7 @@
 ---
 title: Maximum Subarray
 difficulty: Medium
-topics: 
+topics: [Greedy, Array, Divide and Conquer, Dynamic Programming]
 category: 18-greedy
 order: 3
 source: [Extra]
@@ -9,7 +9,7 @@ platform: LeetCode
 status: review
 note: ""
 date_created: 2026-03-26
-date_updated: 2026-08-13
+date_updated: 2026-08-19
 ---
 
 [LeetCode 題目連結](https://leetcode.com/problems/maximum-subarray/)

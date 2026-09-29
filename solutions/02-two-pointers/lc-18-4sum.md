@@ -10,7 +10,7 @@ url: https://leetcode.com/problems/4sum/
 status: ac-unknown
 note: ""
 date_created: 2026-03-05
-date_updated: 2026-03-05
+date_updated: 2026-08-25
 ---
 
 # 18. 4Sum
