@@ -54,7 +54,7 @@
 
 ## T09 · Linked List
 
-**待建**——題刷完了，筆記還沒寫。
+- [T09-21 linked-list](T09-21-linked-list.md) — dummy node、反轉、快慢指針找中點／判環、前後指針間距、鏈表對齊找交點
 
 ## T10 · Trees
 
