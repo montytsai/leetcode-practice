@@ -6,7 +6,7 @@
 
 共 259 題 ｜ done: 189 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 150 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-solo 2 ｜ ac-unknown 172 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 13 ｜ ac-solo 3 ｜ ac-unknown 171 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -148,7 +148,7 @@
 | [21](https://leetcode.com/problems/merge-two-sorted-lists/) | Merge Two Sorted Lists | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-21-merge-two-sorted-lists.md) |
 | [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-141-linked-list-cycle.md) |
 | [876](https://leetcode.com/problems/middle-of-the-linked-list/) | Middle of the Linked List | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-876-middle-of-the-linked-list.md) |
-| [234](https://leetcode.com/problems/palindrome-linked-list/) | Palindrome Linked List | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-234-palindrome-linked-list.md) |
+| [234](https://leetcode.com/problems/palindrome-linked-list/) | Palindrome Linked List | Easy | Grind75 | ac-solo | [🔗](solutions/09-linked-list/lc-234-palindrome-linked-list.md) |
 
 ## Trees（47 題 · done 45 · todo 2）
 
