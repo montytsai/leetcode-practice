@@ -113,7 +113,7 @@ for cat in sorted(rows):
 
 lines += ['---', '',
           '## 相關', '',
-          '- [題解格式正本](_solution-template.md) ｜ [官方提交歷史](_leetcode-submission-history.md)',
+          '- [題解格式正本](_solution-template.md)',
           '- 主題觀念筆記：[topics 索引](topics/_index.md)',
           '']
 

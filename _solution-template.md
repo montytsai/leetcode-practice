@@ -37,7 +37,7 @@
 ### 跨檔的同步約束
 
 - `topics[0]` 是主要主題，依 `_moc.md` 最接近的既有分類決定；其後照 LeetCode 官方 topicTags 排列。
-- 日期以 [`_leetcode-submission-history.md`](_leetcode-submission-history.md) 的 Accepted 紀錄為準：`date_created` 取最早一次，`date_updated` 取最近一次。首次 AC 建檔時兩者同日。不進 LeetCode history 的平台題，以有實質內容的題解日期為證據。格式整理、schema migration、補註解不改日期。
+- 日期照 AC 的日期填：`date_created` 是第一次 AC，`date_updated` 是最近一次 AC；首次 AC 建檔時兩者同日。非 LeetCode 平台的題，以題解有實質內容的日期為準。格式整理、schema migration、補註解不改日期。
 - 未刷的題是只有 frontmatter 的空殼；`_moc.md` 不因多解重複計數。
 - 檔尾的「相關」區塊連回 `topics[]` 對應的每一份主題筆記（例 `[two-pointers](../../topics/T02-21-two-pointers.md)`）與 [`_moc`](_moc.md)；主題筆記的「已刷題目」清單反向連回題解。新建或本次有實質更新的題解要補上，未觸碰的既有題解下次實質更新再補。
 

@@ -5,7 +5,7 @@ The goal is fluency in algorithms and data structures. Every problem records the
 
 English | [繁體中文](README.zh-TW.md)
 
-**[📋 Problem index](_moc.md)** ｜ [Topic notes](topics/_index.md) ｜ [Solution format](_solution-template.md) ｜ [Official AC log](_leetcode-submission-history.md)
+**[📋 Problem index](_moc.md)** ｜ [Topic notes](topics/_index.md) ｜ [Solution format](_solution-template.md)
 
 ---
 
@@ -18,7 +18,6 @@ The root holds only what is current.
 ```
 leetcode-practice/
  ├── _moc.md                             # Problem index (generated — do not edit by hand)
- ├── _leetcode-submission-history.md     # Official LeetCode AC log
  ├── _solution-template.md               # Solution format, frontmatter spec, writing guidelines
  ├── solutions/<NN-topic>/               # One file per problem; _template.md is the skeleton
  ├── topics/                             # Topic notes; _index.md is the map
@@ -112,8 +111,7 @@ It records more than "solved or not" — it records whether I could produce the 
 **Source of truth, in order**:
 
 1. Solution frontmatter is the single source of truth for status, order and category.
-2. [`_leetcode-submission-history.md`](_leetcode-submission-history.md) is authoritative for official AC records; it is only ever appended to, never rewritten.
-3. [`_moc.md`](_moc.md) is regenerated from (1) and is **not** a source of truth — delete it and it comes back; edit it by hand and the next run overwrites you.
+2. [`_moc.md`](_moc.md) is regenerated from (1) and is **not** a source of truth — delete it and it comes back; edit it by hand and the next run overwrites you.
 
 **How the count works**: `system total = official LeetCode AC + problems solved elsewhere`. The latter means entries whose `platform` is not `LeetCode` — those never show up in the official record, and the field alone decides it. The `done:` figure in the `_moc.md` header is the system total.
 
@@ -127,7 +125,6 @@ The scripts need Python 3 (`lc-stats.sh` also needs `curl`):
 
 ```bash
 python scripts/gen-moc.py          # Regenerate _moc.md from solution frontmatter
-python scripts/lc-sync-history.py  # Incrementally sync AC records from the official API
 bash   scripts/lc-stats.sh         # Reconcile the official count against local records
 ```
 

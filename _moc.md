@@ -82,7 +82,7 @@
 | [1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Maximum Number of Vowels in a Substring of Given Length | Medium | LeetCode75 | ac-unknown | [🔗](solutions/04-sliding-window/lc-1456-maximum-number-of-vowels-in-a-substring-of-given-length.md) |
 | [1493](https://leetcode.com/problems/longest-subarray-of-1-s-after-deleting-one-element/) | Longest Subarray of 1's After Deleting One Element | Medium | LeetCode75 | ac-unknown | [🔗](solutions/04-sliding-window/lc-1493-longest-subarray-of-1-s-after-deleting-one-element.md) |
 | [3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Longest Substring Without Repeating Characters | Medium | Grind75 | ac-unknown | [🔗](solutions/04-sliding-window/lc-3-longest-substring-without-repeating-characters.md) |
-| [438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Find All Anagrams in a String | Medium | Extra | ac-solo | [🔗](solutions/04-sliding-window/lc-438-find-all-anagrams-in-a-string.md) |
+| [438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Find All Anagrams in a String | Medium | Grind75 | ac-solo | [🔗](solutions/04-sliding-window/lc-438-find-all-anagrams-in-a-string.md) |
 
 ## Prefix Sum（1 題 · done 1 · todo 0）
 
@@ -381,5 +381,5 @@
 
 ## 相關
 
-- [題解格式正本](_solution-template.md) ｜ [官方提交歷史](_leetcode-submission-history.md)
+- [題解格式正本](_solution-template.md)
 - 主題觀念筆記：[topics 索引](topics/_index.md)

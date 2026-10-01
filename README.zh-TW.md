@@ -5,7 +5,7 @@
 
 [English](README.md) | 繁體中文
 
-**[📋 刷題總表](_moc.md)** ｜ [主題筆記索引](topics/_index.md) ｜ [題解格式](_solution-template.md) ｜ [官方 AC 紀錄](_leetcode-submission-history.md)
+**[📋 刷題總表](_moc.md)** ｜ [主題筆記索引](topics/_index.md) ｜ [題解格式](_solution-template.md)
 
 ---
 
@@ -18,7 +18,6 @@ root 只放現行主體。
 ```
 leetcode-practice/
  ├── _moc.md                             # 刷題總表（機器重生，勿手改）
- ├── _leetcode-submission-history.md     # LeetCode 官方 AC 紀錄
  ├── _solution-template.md               # 題解格式、frontmatter 規格與寫作口徑
  ├── solutions/<NN-主題>/                # 一題一檔，_template.md 是新增用的骨架
  ├── topics/                             # 主題筆記，_index.md 是導航
@@ -112,8 +111,7 @@ leetcode-practice/
 **權威排序**：
 
 1. 題解 frontmatter 是狀態、順序、分類的單一事實來源。
-2. [`_leetcode-submission-history.md`](_leetcode-submission-history.md) 是官方 AC 的權威，只增量新增、不改寫既有列。
-3. [`_moc.md`](_moc.md) 由 1 重生，**不是資料正本**——砍掉可以重生，手改會被下次重生蓋掉。
+2. [`_moc.md`](_moc.md) 由 1 重生，**不是資料正本**——砍掉可以重生，手改會被下次重生蓋掉。
 
 **計數口徑**：`system total = 官方 LeetCode AC + 非 LeetCode 平台已解題`。後者指 `platform` 不是 `LeetCode` 的題，那些在官方紀錄裡查不到，由欄位認定。`_moc.md` header 的 `done:` 就是 system total。
 
@@ -127,7 +125,6 @@ leetcode-practice/
 
 ```bash
 python scripts/gen-moc.py          # 由題解 frontmatter 重生 _moc.md
-python scripts/lc-sync-history.py  # 從官方 API 增量同步 AC 紀錄
 bash   scripts/lc-stats.sh         # 對帳官方題數與本地紀錄
 ```
 
