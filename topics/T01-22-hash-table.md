@@ -32,6 +32,7 @@
 - [Intersection of Two Arrays](../solutions/01-arrays-hashing/lc-349-intersection-of-two-arrays.md) Easy
 - [Ransom Note](../solutions/01-arrays-hashing/lc-383-ransom-note.md) Easy
 - [Longest Palindrome](../solutions/18-greedy/lc-409-longest-palindrome.md) Easy
+- [Find All Anagrams in a String](../solutions/04-sliding-window/lc-438-find-all-anagrams-in-a-string.md) Medium
 - [4Sum II](../solutions/01-arrays-hashing/lc-454-4sum-ii.md) Medium
 - [Non-decreasing Subsequences](../solutions/12-backtracking/lc-491-non-decreasing-subsequences.md) Medium
 - [Partition Labels](../solutions/18-greedy/lc-763-partition-labels.md) Medium

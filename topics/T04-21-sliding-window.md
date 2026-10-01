@@ -17,11 +17,14 @@
 
 右界每加入一個元素，就在窗口超過固定大小時移除最左元素。這類題通常可以用一個累加狀態在 `O(n)` 內完成。
 
+窗口內容要與目標比對（如異位詞）時，用單一計數表記錄「目標需求減窗口現況」：進窗口減 1、出窗口加 1，全部為 0 即相符。每輪掃表判斷是 `O(字母表大小)`；改成可變長度窗口，在某字元差值小於 0 時縮窗，窗口長度等於目標長度就可直接收錄，不必掃表。
+
 ## 已刷題目
 
 - [3. Longest Substring Without Repeating Characters](../solutions/04-sliding-window/lc-3-longest-substring-without-repeating-characters.md) Medium — 用字元最後出現位置跳躍更新左界，並保證左界不倒退。
 - [209. Minimum Size Subarray Sum](../solutions/04-sliding-window/lc-209-minimum-size-subarray-sum.md) Medium — 在總和達標時縮小左界，找最短連續子陣列。
 - [239. Sliding Window Maximum](../solutions/04-sliding-window/lc-239-sliding-window-maximum.md) Hard — 用單調佇列維持每個固定窗口的最大值。
+- [438. Find All Anagrams in a String](../solutions/04-sliding-window/lc-438-find-all-anagrams-in-a-string.md) Medium — 固定長度窗口搭配單一差值 HashMap，全部歸零就是異位詞。
 - [643. Maximum Average Subarray I](../solutions/04-sliding-window/lc-643-maximum-average-subarray-i.md) Easy — 用固定長度窗口維持區間總和。
 - [1004. Max Consecutive Ones III](../solutions/04-sliding-window/lc-1004-max-consecutive-ones-iii.md) Medium — 當可翻轉的零超過上限時縮小窗口。
 - [1456. Maximum Number of Vowels in a Substring of Given Length](../solutions/04-sliding-window/lc-1456-maximum-number-of-vowels-in-a-substring-of-given-length.md) Medium — 固定窗口每次加入一字元並移除一字元。

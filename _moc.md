@@ -4,9 +4,9 @@
 > 改狀態 → 改題解 frontmatter 的 `status`；改順序 → 改 `order`；改完重跑腳本。
 > 一題一列，不另開表格；每題住哪個資料夾由 `category` 決定。
 
-共 259 題 ｜ done: 189 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 150 / Hard 15
+共 260 題 ｜ done: 190 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 151 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-solo 5 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 13 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -70,7 +70,7 @@
 | [459](https://leetcode.com/problems/repeated-substring-pattern/) | Repeated Substring Pattern | Easy | Carl | ac-unknown | [🔗](solutions/03-string/lc-459-repeated-substring-pattern.md) |
 | [8](https://leetcode.com/problems/string-to-integer-atoi/) | String to Integer (atoi) | Medium | Grind75 | ac-unknown | [🔗](solutions/03-string/lc-8-string-to-integer-atoi.md) |
 
-## Sliding Window（8 題 · done 8 · todo 0）
+## Sliding Window（9 題 · done 9 · todo 0）
 
 | id | title | difficulty | source | status | solution |
 |---|---|---|---|---|---|
@@ -82,6 +82,7 @@
 | [1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Maximum Number of Vowels in a Substring of Given Length | Medium | LeetCode75 | ac-unknown | [🔗](solutions/04-sliding-window/lc-1456-maximum-number-of-vowels-in-a-substring-of-given-length.md) |
 | [1493](https://leetcode.com/problems/longest-subarray-of-1-s-after-deleting-one-element/) | Longest Subarray of 1's After Deleting One Element | Medium | LeetCode75 | ac-unknown | [🔗](solutions/04-sliding-window/lc-1493-longest-subarray-of-1-s-after-deleting-one-element.md) |
 | [3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Longest Substring Without Repeating Characters | Medium | Grind75 | ac-unknown | [🔗](solutions/04-sliding-window/lc-3-longest-substring-without-repeating-characters.md) |
+| [438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Find All Anagrams in a String | Medium | Extra | ac-solo | [🔗](solutions/04-sliding-window/lc-438-find-all-anagrams-in-a-string.md) |
 
 ## Prefix Sum（1 題 · done 1 · todo 0）
 

@@ -60,6 +60,7 @@ num = num * 10 + digit;
 - [151. Reverse Words in a String](../solutions/02-two-pointers/lc-151-reverse-words-in-a-string.md) Medium — 處理空白與單字順序。
 - [344. Reverse String](../solutions/02-two-pointers/lc-344-reverse-string.md) Easy — 用雙指標交換字元。
 - [345. Reverse Vowels of a String](../solutions/02-two-pointers/lc-345-reverse-vowels-of-a-string.md) Easy — 雙指標只交換符合條件的字元。
+- [438. Find All Anagrams in a String](../solutions/04-sliding-window/lc-438-find-all-anagrams-in-a-string.md) Medium — 異位詞只看字元次數，固定窗口內用差值計數表比對。
 - [443. String Compression](../solutions/02-two-pointers/lc-443-string-compression.md) Medium — 讀寫指標壓縮連續字元。
 - [459. Repeated Substring Pattern](../solutions/03-string/lc-459-repeated-substring-pattern.md) Easy — 判斷字串是否由重複片段組成。
 - [541. Reverse String II](../solutions/02-two-pointers/lc-541-reverse-string-ii.md) Easy — 依固定區段反轉字元。
