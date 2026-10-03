@@ -53,6 +53,7 @@ num = num * 10 + digit;
 ## 已刷題目
 
 - [3. Longest Substring Without Repeating Characters](../solutions/04-sliding-window/lc-3-longest-substring-without-repeating-characters.md) Medium — 用滑動窗口與字元最後出現位置維持無重複子字串。
+- [5. Longest Palindromic Substring](../solutions/16-one-d-dp/lc-5-longest-palindromic-substring.md) Medium — 回文以中心對稱，枚舉 `2n - 1` 個中心向外擴展，奇偶中心共用同一個 `expand`。
 - [8. String to Integer (atoi)](../solutions/03-string/lc-8-string-to-integer-atoi.md) Medium — 固定流程的逐字元解析，重點在乘 10 之前預判 `int` 溢位並夾到邊界值。
 - [14. Longest Common Prefix](../solutions/01-arrays-hashing/lc-14-longest-common-prefix.md) Easy — 排序後只比較字典序最小與最大的字串，並確認 `substring(0, i)` 的右邊界不包含。
 - [17. Letter Combinations of a Phone Number](../solutions/12-backtracking/lc-17-letter-combinations-of-a-phone-number.md) Medium — 用 `StringBuilder` 累積路徑，`setLength(len)` 做字串層級的回溯還原。

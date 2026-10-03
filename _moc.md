@@ -4,9 +4,9 @@
 > 改狀態 → 改題解 frontmatter 的 `status`；改順序 → 改 `order`；改完重跑腳本。
 > 一題一列，不另開表格；每題住哪個資料夾由 `category` 決定。
 
-共 260 題 ｜ done: 190 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 151 / Hard 15
+共 261 題 ｜ done: 191 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 152 / Hard 15
 
-狀態分布：ac-assisted 13 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 14 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -277,7 +277,7 @@
 | [787](https://leetcode.com/problems/cheapest-flights-within-k-stops/) | Cheapest Flights Within K Stops | Medium | Carl | todo | — |
 | [1584](https://leetcode.com/problems/min-cost-to-connect-all-points/) | Min Cost to Connect All Points | Medium | Carl | todo | — |
 
-## 1-D Dynamic Programming（21 題 · done 1 · todo 20）
+## 1-D Dynamic Programming（22 題 · done 2 · todo 20）
 
 | id | title | difficulty | source | status | solution |
 |---|---|---|---|---|---|
@@ -302,6 +302,7 @@
 | [746](https://leetcode.com/problems/min-cost-climbing-stairs/) | Min Cost Climbing Stairs | Easy | LeetCode75 | todo | — |
 | [1035](https://leetcode.com/problems/uncrossed-lines/) | Uncrossed Lines | Medium | Carl | todo | — |
 | [1137](https://leetcode.com/problems/n-th-tribonacci-number/) | N-th Tribonacci Number | Easy | LeetCode75 | todo | — |
+| [5](https://leetcode.com/problems/longest-palindromic-substring/) | Longest Palindromic Substring | Medium | Extra | ac-assisted | [🔗](solutions/16-one-d-dp/lc-5-longest-palindromic-substring.md) |
 
 ## 2-D Dynamic Programming（11 題 · done 0 · todo 11）
 

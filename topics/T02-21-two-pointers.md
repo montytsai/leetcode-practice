@@ -30,6 +30,7 @@ for (int read = 0; read < nums.length; read++) {
 
 ## 已刷題目
 
+- [Longest Palindromic Substring](../solutions/16-one-d-dp/lc-5-longest-palindromic-substring.md) Medium — 以每個字元與相鄰空隙為中心，左右指針向外擴展到第一次失配。
 - [Container With Most Water](../solutions/02-two-pointers/lc-11-container-with-most-water.md) Medium
 - [3Sum](../solutions/02-two-pointers/lc-15-3sum.md) Medium
 - [4Sum](../solutions/02-two-pointers/lc-18-4sum.md) Medium — 剪枝要比「以 i 開頭能湊出的最小四數和」跟 target，不能只比 `nums[i]` 單一值，因為 target 可正可負。

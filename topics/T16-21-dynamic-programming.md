@@ -12,6 +12,7 @@ Dynamic Programming 適合有重疊子問題與可重用狀態的題目。先定
 
 ## 已刷題目
 
+- [Longest Palindromic Substring](../solutions/16-one-d-dp/lc-5-longest-palindromic-substring.md) Medium — 本次用中心擴展（`O(n^2)`、不需 DP 表）；DP 解法是 `dp[i][j]` 記錄區間是否回文。
 - [Jump Game II](../solutions/18-greedy/lc-45-jump-game-ii.md) Medium — 比較各步能到達的範圍
 - [Maximum Subarray](../solutions/18-greedy/lc-53-maximum-subarray.md) Medium — 壓縮「以目前位置結尾」的最佳狀態
 - [Jump Game](../solutions/18-greedy/lc-55-jump-game.md) Medium — 維護目前可以到達的最遠位置
