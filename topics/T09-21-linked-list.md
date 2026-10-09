@@ -57,6 +57,8 @@ return prev; // curr 變成 null 時，prev 就是新頭
 
 [707](../solutions/09-linked-list/lc-707-design-linked-list.md) 要求自己實作 `get`、`addAtHead`、`addAtTail`、`addAtIndex`、`deleteAtIndex`。用 dummy head（有時再加 dummy tail）統一頭尾操作，`size` 欄位另外維護以便直接判斷索引是否合法，`Node` 封裝成獨立類別，職責跟外層的鏈表操作邏輯分開。
 
+[146](../solutions/09-linked-list/lc-146-lru-cache.md) 把鏈表當成「使用順序」的容器：HashMap 存 `key → Node` 直接定位，雙向鏈表負責把節點摘下、接到頭部、淘汰尾端，兩個動作都是 `O(1)`。鏈表一定要雙向，單向鏈表摘除節點得從頭找前驅；Node 也必須存 `key`，淘汰尾端節點時才能同步從 HashMap 刪掉。Java 的 `LinkedHashMap(capacity, 0.75f, true)` 加 `removeEldestEntry` 是這個組合的現成版本，`0.75f` 只是 `HashMap` 的預設 load factor。
+
 ### 樹上的 next 指標：把每一層當成一條鏈表接
 
 [116](../solutions/08-binary-search/lc-116-populating-next-right-pointers-in-each-node.md)（完美二元樹）與 [117](../solutions/10-trees/lc-117-populating-next-right-pointers-in-each-node-ii.md)（一般二元樹）要求把同一層的節點用 `next` 指標串起來，等於是把 BFS 逐層走訪的順序，改成不用額外 Queue 就能重現：上一層的 `next` 指標建好之後，就可以拿它來走訪整層節點，一邊走一邊把下一層的節點串起來。完美二元樹每個節點的左右子節點必定都存在，串接邏輯很規律；一般二元樹的子節點可能缺一邊或兩邊都缺，需要一個額外指標記住「目前正在串的下一層鏈表尾端」（等同一個下一層的 dummy node），才能在子節點數量不固定時還串得對。
@@ -75,6 +77,7 @@ return prev; // curr 變成 null 時，prev 就是新頭
 - [117. Populating Next Right Pointers in Each Node II](../solutions/10-trees/lc-117-populating-next-right-pointers-in-each-node-ii.md) Medium — 一般二元樹版，子節點數量不固定，需要額外指標記住下一層鏈表尾端
 - [141. Linked List Cycle](../solutions/09-linked-list/lc-141-linked-list-cycle.md) Easy — 快慢指針判環的最小案例，只需回傳有沒有環
 - [142. Linked List Cycle II](../solutions/09-linked-list/lc-142-linked-list-cycle-ii.md) Medium — 找環入口，靠相遇點到入口與頭節點到入口等距的關係
+- [146. LRU Cache](../solutions/09-linked-list/lc-146-lru-cache.md) Medium — HashMap 定位節點＋雙向鏈表維護使用順序，兩者合用讓 `get`／`put` 都 `O(1)`；Java 可直接用 `LinkedHashMap`
 - [160. Intersection of Two Linked Lists](../solutions/09-linked-list/lc-160-intersection-of-two-linked-lists.md) Easy — 兩條不等長鏈表找交點，切換頭指標讓兩指標總走訪距離相等
 - [19. Remove Nth Node From End of List](../solutions/09-linked-list/lc-19-remove-nth-node-from-end-of-list.md) Medium — 前後指針保持 N 步間距，搭配 dummy node 一次刪到倒數第 N 個
 - [203. Remove Linked List Elements](../solutions/09-linked-list/lc-203-remove-linked-list-elements.md) Easy — 刪除指定值節點，dummy node 統一處理頭節點被刪的情況

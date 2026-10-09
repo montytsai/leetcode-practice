@@ -4,9 +4,9 @@
 > 改狀態 → 改題解 frontmatter 的 `status`；改順序 → 改 `order`；改完重跑腳本。
 > 一題一列，不另開表格；每題住哪個資料夾由 `category` 決定。
 
-共 261 題 ｜ done: 191 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 152 / Hard 15
+共 262 題 ｜ done: 192 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 153 / Hard 15
 
-狀態分布：ac-assisted 14 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 15 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -132,7 +132,7 @@
 | [875](https://leetcode.com/problems/koko-eating-bananas/) | Koko Eating Bananas | Medium | LeetCode75 | todo | — |
 | [1268](https://leetcode.com/problems/search-suggestions-system/) | Search Suggestions System | Medium | LeetCode75 | todo | — |
 
-## Linked List（14 題 · done 14 · todo 0）
+## Linked List（15 題 · done 15 · todo 0）
 
 | id | title | difficulty | source | status | solution |
 |---|---|---|---|---|---|
@@ -150,6 +150,7 @@
 | [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-141-linked-list-cycle.md) |
 | [876](https://leetcode.com/problems/middle-of-the-linked-list/) | Middle of the Linked List | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-876-middle-of-the-linked-list.md) |
 | [234](https://leetcode.com/problems/palindrome-linked-list/) | Palindrome Linked List | Easy | Grind75 | ac-solo | [🔗](solutions/09-linked-list/lc-234-palindrome-linked-list.md) |
+| [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Medium | Extra | ac-assisted | [🔗](solutions/09-linked-list/lc-146-lru-cache.md) |
 
 ## Trees（47 題 · done 45 · todo 2）
 

@@ -18,6 +18,7 @@
 - [Clone Graph](../solutions/14-graphs/lc-133-clone-graph.md) Medium
 - [Linked List Cycle](../solutions/09-linked-list/lc-141-linked-list-cycle.md) Easy
 - [Linked List Cycle II](../solutions/09-linked-list/lc-142-linked-list-cycle-ii.md) Medium
+- [LRU Cache](../solutions/09-linked-list/lc-146-lru-cache.md) Medium
 - [Intersection of Two Linked Lists](../solutions/09-linked-list/lc-160-intersection-of-two-linked-lists.md) Easy
 - [Determine if Two Strings Are Close](../solutions/01-arrays-hashing/lc-1657-determine-if-two-strings-are-close.md) Medium
 - [Max Number of K-Sum Pairs](../solutions/02-two-pointers/lc-1679-max-number-of-k-sum-pairs.md) Medium

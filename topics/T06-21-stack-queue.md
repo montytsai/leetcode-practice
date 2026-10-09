@@ -19,6 +19,7 @@ Stack 與 Queue 都保存尚未完成的狀態，但取出順序不同：Stack �
 - [20. Valid Parentheses](../solutions/06-stack/lc-20-valid-parentheses.md) Easy — 用 Stack 配對最近的左括號。
 - [150. Evaluate Reverse Polish Notation](../solutions/06-stack/lc-150-evaluate-reverse-polish-notation.md) Medium — pop 右 operand 再 pop 左 operand，維持 operator 順序。
 - [155. Min Stack](../solutions/06-stack/lc-155-min-stack.md) Medium — 輔助棧：第二個棧逐層對應主棧，把 O(n) 的查詢換成 O(1) 的 peek。
+- [146. LRU Cache](../solutions/09-linked-list/lc-146-lru-cache.md) Medium — 設計題：HashMap＋雙向鏈表維護使用順序，Java 可用 `LinkedHashMap` 的 access order。
 - [225. Implement Stack Using Queues](../solutions/06-stack/lc-225-implement-stack-using-queues.md) Easy — 旋轉 Queue 讓最新元素先被取出。
 - [232. Implement Queue using Stacks](../solutions/06-stack/lc-232-implement-queue-using-stacks.md) Easy — 用兩個 Stack 反轉順序。
 - [239. Sliding Window Maximum](../solutions/04-sliding-window/lc-239-sliding-window-maximum.md) Hard — 用 Monotonic Deque 維護視窗最大值候選。
