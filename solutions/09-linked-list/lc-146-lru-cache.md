@@ -4,11 +4,11 @@ difficulty: Medium
 topics: [Linked List, Hash Table, Design, Doubly-Linked List]
 category: 09-linked-list
 order: 15
-source: [Extra]
+source: [Grind75]
 platform: LeetCode
 url: https://leetcode.com/problems/lru-cache/
 status: ac-assisted
-note: "查 API 才寫出來；自述背不起 LinkedHashMap 這個用法，待手刻 HashMap + 雙向鏈表版"
+note: "兩個解法都靠參考：解法一查 API、解法二看完解答才寫，仍提交失敗兩次才 AC；待不看解答重寫解法二"
 date_created: 2026-10-09
 date_updated: 2026-10-09
 ---
@@ -22,7 +22,9 @@ date_updated: 2026-10-09
 
 ## 心得
 
-去查 API 寫的，才發現有這方法可以用，我根本背不起來有這方法，而且我不知道 0.75f 怎麼來的。
+解法一：去查 API 寫的，才發現有這方法可以用，我根本背不起來有這方法，而且我不知道 0.75f 怎麼來的。
+
+解法二：看完解答寫的，仍然提交失敗兩次才 AC。這解靠 map 存值，node 來存位置。
 
 這次補上的重點：
 
@@ -124,11 +126,163 @@ class LRUCache {
 
 ---
 
+## 解法二：HashMap + 手刻雙向鏈表
+
+### Intuition
+
+解法一的 `LinkedHashMap` 內部做的事，這個解法自己寫出來：HashMap 負責「依 key 找到東西」，雙向鏈表負責「使用順序」。兩者分工，HashMap 的 value 不存數值，存的是鏈表節點，所以「值」從節點上讀，「位置」也由節點決定。
+
+鏈表約定尾端（`latest` 前一個）是最近使用，頭端（`oldest` 後一個）是最久沒用。`get` 命中與 `put` 都是「把節點摘下、接到尾端」；超過容量時淘汰的永遠是 `oldest.next`。
+
+鏈表頭尾各放一個 dummy 節點（`oldest`、`latest`），真正的節點永遠夾在兩者之間，摘除與插入因此不用判斷「是不是頭或尾」。dummy 的內容不會被讀取，只提供 `prev`／`next` 的錨點。
+
+節點必須存 `key`。淘汰時手上只有鏈表上的節點，要從 HashMap 刪掉對應項目，只能靠節點裡的 `key` 反查。
+
+### Approach
+
+1. 建構子建立 HashMap 與兩個 dummy 節點，並讓 `oldest.next = latest`、`latest.prev = oldest`。
+2. `get`：key 不存在回傳 `-1`；存在就從 HashMap 取出節點，先 `remove` 再 `add` 把它移到尾端，回傳 `val`。
+3. `put`：key 已存在就先把舊節點從鏈表摘掉；接著建立新節點，放進 HashMap（會蓋掉舊的項目）並 `add` 到尾端。
+4. `put` 之後若 `cache.size() > capacity`，取 `oldest.next` 這個最久沒用的節點，從鏈表摘除並用它的 `key` 從 HashMap 刪掉。
+5. `add(node)` 把節點插在 `latest` 前面；`remove(node)` 讓前後兩個鄰居互相指向。兩者都只改固定數量的指標。
+
+### Complexity
+
+**Time complexity: `O(1)`**
+
+HashMap 查找是平均 `O(1)`，`add`、`remove` 各只改固定數量的指標，淘汰也只動一個節點。
+
+**Space complexity: `O(capacity)`**
+
+HashMap 與鏈表各存最多 `capacity` 個項目（新增後短暫多一個，隨即淘汰），另加兩個 dummy 節點。
+
+### Code
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 146. LRU Cache
+ * HashMap finds a node by key; a doubly linked list keeps the usage order.
+ * Time Complexity: O(1) for get and put
+ * Space Complexity: O(capacity)
+ */
+class LRUCache {
+
+    private int capacity;
+    private Map<Integer, Node> cache;
+    // Dummy nodes: real nodes always sit between oldest and latest.
+    private Node oldest;
+    private Node latest;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        this.cache = new HashMap<>(capacity);
+        this.oldest = new Node(0, 0);
+        this.latest = new Node(0, 0);
+        this.oldest.next = latest;
+        this.latest.prev = oldest;
+    }
+
+    public int get(int key) {
+        if (!cache.containsKey(key)) {
+            return -1;
+        }
+
+        // Move the node to the most recently used end.
+        Node node = cache.get(key);
+        remove(node);
+        add(node);
+        return node.val;
+    }
+
+    public void put(int key, int value) {
+        if (cache.containsKey(key)) {
+            // Unlink the old node; the map entry is replaced below.
+            remove(cache.get(key));
+        }
+        Node node = new Node(key, value);
+        cache.put(key, node);
+        add(node);
+
+        if (cache.size() > capacity) {
+            // The least recently used node is right after the oldest dummy.
+            Node lru = oldest.next;
+            remove(lru);
+            // The node stores its key, so we can delete it from the map.
+            cache.remove(lru.key);
+        }
+    }
+
+    // Insert the node just before the latest dummy.
+    private void add(Node newNode) {
+        Node prev = latest.prev;
+        prev.next = newNode;
+
+        newNode.prev = prev;
+        newNode.next = latest;
+
+        latest.prev = newNode;
+    }
+
+    // Unlink the node by connecting its two neighbors.
+    private void remove(Node node) {
+        Node prev = node.prev;
+        Node next = node.next;
+        prev.next = next;
+        next.prev = prev;
+    }
+
+}
+
+class Node {
+
+    int key;
+    int val;
+    Node prev;
+    Node next;
+
+    public Node(int key, int val) {
+        this.key = key;
+        this.val = val;
+        this.prev = null;
+        this.next = null;
+    }
+
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
+```
+
+### Code Review
+
+- **Learning provenance**：`reference-assisted`，對應 `status: ac-assisted`。她自述是看完解答才寫，仍提交失敗兩次才 AC；失敗原因她沒說，記為未確認。能否不看解答重寫未確認。
+- **Correctness / invariant**：不變式是「鏈表上的節點集合 = HashMap 的 value 集合，且順序由舊到新」。`get`、`put` 都以 `remove` 後 `add` 維持它；淘汰時鏈表與 HashMap 同步刪除，由節點存 `key` 保證。我拿它和解法一對 20000 組隨機操作序列（容量 1 到 5、key 0 到 7）比對，輸出全部一致。
+- **Strength**：兩個 dummy 節點讓 `add`、`remove` 沒有任何邊界判斷；`oldest` 與 `latest` 的命名直接表達方向，比 `head`、`tail` 不容易搞混。
+- **Trade-off**：`put` 既有 key 時是丟掉舊節點、重建新節點，而不是就地改 `val` 再移到尾端。結果正確，只是多配置一個物件；就地更新少一次配置，是同一解法的小改良。
+- **Style**：`get` 先 `containsKey` 再 `get`，查了兩次 HashMap；改成 `Node node = cache.get(key); if (node == null) return -1;` 一次查找即可。`put` 同理。`Node` 的建構子裡把 `prev`、`next` 設成 `null` 是多餘的，欄位預設就是 `null`。
+- **Edge cases**：`capacity = 1` 時每個新 key 淘汰前一個，淘汰的是 `oldest.next`，不會是剛加入的節點。題目保證 `capacity >= 1`，所以淘汰時鏈表上至少有一個真實節點，dummy 不會被當成 LRU 刪掉。
+
+---
+
+## 解法比較
+
+| 解法 | Time | Space | 優點 | Trade-off | 使用時機 |
+| --- | --- | --- | --- | --- | --- |
+| 解法一：LinkedHashMap | `O(1)` | `O(capacity)` | 程式碼短，指標操作交給 JDK | 要記得 API 與 hook；面試常不被接受 | 時間緊、題目沒禁用函式庫 |
+| 解法二：HashMap + 手刻雙向鏈表 | `O(1)` | `O(capacity)` | 完整掌握機制，可移植到沒有 `LinkedHashMap` 的語言 | 指標操作多，容易漏掉淘汰時同步刪 HashMap | 面試、要證明理解資料結構 |
+
 ## Optimality
 
-以時間與空間為指標，這份解法已是最佳：`get`、`put` 都是 `O(1)`，空間 `O(capacity)`，已達題目要求，沒有更低的漸近複雜度。
+以時間與空間為指標，兩個解法都是最佳：`get`、`put` 為 `O(1)`，空間 `O(capacity)`，已達題目要求，沒有更低的漸近複雜度。
 
-以面試價值為指標，它不是最好的版本，因為面試官通常想看到你自己組出資料結構。值得學的替代法只有一個：HashMap 存 `key → Node`，Node 是雙向鏈表節點（存 `key`、`value`、`prev`、`next`），鏈表頭尾各放一個 dummy 節點。`get` 命中時把節點摘下接到頭部；`put` 對既有 key 更新值並同樣移到頭部，新 key 則插到頭部，超過容量就移除尾端 dummy 的前一個節點，同時從 HashMap 刪掉它的 key（所以 Node 必須存 `key`）。時間 `O(1)`、空間 `O(capacity)`，與解法一相同，差別在於你完整掌握了 `LinkedHashMap` 內部做的事。時間緊、題目沒禁用函式庫時選解法一；面試或要證明理解結構時選手刻版。
+以面試價值為指標，解法二是面試官預期的答案，解法一是知道函式庫時的捷徑。解法二的要點是 HashMap 的 value 存節點、節點存 `key`、dummy 頭尾，三者缺一都會讓淘汰或邊界出錯。既然兩個解法都已 AC，沒有再需要補的替代法；下一步是不看解答重寫解法二。
 
 ## 相關
 

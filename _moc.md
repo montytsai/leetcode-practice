@@ -150,7 +150,7 @@
 | [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-141-linked-list-cycle.md) |
 | [876](https://leetcode.com/problems/middle-of-the-linked-list/) | Middle of the Linked List | Easy | Grind75 | ac-unknown | [🔗](solutions/09-linked-list/lc-876-middle-of-the-linked-list.md) |
 | [234](https://leetcode.com/problems/palindrome-linked-list/) | Palindrome Linked List | Easy | Grind75 | ac-solo | [🔗](solutions/09-linked-list/lc-234-palindrome-linked-list.md) |
-| [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Medium | Extra | ac-assisted | [🔗](solutions/09-linked-list/lc-146-lru-cache.md) |
+| [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Medium | Grind75 | ac-assisted | [🔗](solutions/09-linked-list/lc-146-lru-cache.md) |
 
 ## Trees（47 題 · done 45 · todo 2）
 
