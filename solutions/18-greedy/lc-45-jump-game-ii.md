@@ -6,6 +6,7 @@ category: 18-greedy
 order: 5
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/jump-game-ii/
 status: ac-unknown
 note: ""
 date_created: 2026-03-27

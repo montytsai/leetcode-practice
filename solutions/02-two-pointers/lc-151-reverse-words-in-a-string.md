@@ -6,6 +6,7 @@ category: 02-two-pointers
 order: 5
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/reverse-words-in-a-string/
 status: ac-unknown
 note: ""
 date_created: 2026-02-24

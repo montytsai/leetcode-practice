@@ -6,6 +6,7 @@ category: 15-advanced-graphs
 order: 1
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/reconstruct-itinerary/
 status: ac-unknown
 note: ""
 date_created: 2026-06-17

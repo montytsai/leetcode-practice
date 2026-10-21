@@ -6,6 +6,7 @@ category: 11-heap-priority-queue
 order: 1
 source: [Extra]
 platform: LeetCode
+url: https://leetcode.com/problems/kth-largest-element-in-a-stream/
 status: ac-unknown
 note: ""
 date_created: 2026-07-06

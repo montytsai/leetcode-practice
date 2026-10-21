@@ -6,6 +6,7 @@ category: 19-intervals
 order: 1
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/non-overlapping-intervals/
 status: ac-unknown
 note: ""
 date_created: 2026-04-02

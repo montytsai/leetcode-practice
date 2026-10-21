@@ -6,6 +6,7 @@ category: 10-trees
 order: 30
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/find-mode-in-binary-search-tree/
 status: ac-unknown
 note: ""
 date_created: 2025-05-15

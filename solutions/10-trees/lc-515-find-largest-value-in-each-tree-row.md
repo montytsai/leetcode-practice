@@ -6,6 +6,7 @@ category: 10-trees
 order: 9
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/find-largest-value-in-each-tree-row/
 status: ac-unknown
 note: ""
 date_created: 2025-05-09

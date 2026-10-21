@@ -6,6 +6,7 @@ category: 10-trees
 order: 7
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/average-of-levels-in-binary-tree/
 status: ac-unknown
 note: ""
 date_created: 2025-05-09

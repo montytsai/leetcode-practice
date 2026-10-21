@@ -6,6 +6,7 @@ category: 10-trees
 order: 27
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/search-in-a-binary-search-tree/
 status: ac-unknown
 note: ""
 date_created: 2026-03-19

@@ -6,6 +6,7 @@ category: 18-greedy
 order: 12
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/partition-labels/
 status: ac-unknown
 note: ""
 date_created: 2026-04-02

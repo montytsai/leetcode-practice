@@ -6,6 +6,7 @@ category: 10-trees
 order: 20
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/find-bottom-left-tree-value/
 status: ac-unknown
 note: ""
 date_created: 2025-05-12

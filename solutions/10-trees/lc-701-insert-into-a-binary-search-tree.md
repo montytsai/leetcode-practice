@@ -6,6 +6,7 @@ category: 10-trees
 order: 33
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/insert-into-a-binary-search-tree/
 status: ac-unknown
 note: ""
 date_created: 2025-05-21

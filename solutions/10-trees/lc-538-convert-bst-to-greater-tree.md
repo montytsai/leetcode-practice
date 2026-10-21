@@ -6,6 +6,7 @@ category: 10-trees
 order: 37
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/convert-bst-to-greater-tree/
 status: ac-unknown
 note: ""
 date_created: 2025-05-26

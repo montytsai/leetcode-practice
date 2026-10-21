@@ -6,6 +6,7 @@ category: 08-binary-search
 order: 2
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/squares-of-a-sorted-array/
 status: ac-unknown
 note: ""
 date_created: 2026-03-02

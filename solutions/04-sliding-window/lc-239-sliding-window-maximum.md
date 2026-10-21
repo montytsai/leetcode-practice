@@ -6,6 +6,7 @@ category: 04-sliding-window
 order: 2
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/sliding-window-maximum/
 status: ac-unknown
 note: ""
 date_created: 2026-03-01

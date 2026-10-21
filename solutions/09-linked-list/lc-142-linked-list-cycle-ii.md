@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 7
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/linked-list-cycle-ii/
 status: ac-unknown
 note: ""
 date_created: 2025-04-25

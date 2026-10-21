@@ -6,6 +6,7 @@ category: 10-trees
 order: 36
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
 status: ac-unknown
 note: ""
 date_created: 2026-03-20

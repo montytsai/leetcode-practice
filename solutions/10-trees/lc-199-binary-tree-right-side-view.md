@@ -6,6 +6,7 @@ category: 10-trees
 order: 6
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/binary-tree-right-side-view/
 status: ac-solo
 note: ""
 date_created: 2026-03-17

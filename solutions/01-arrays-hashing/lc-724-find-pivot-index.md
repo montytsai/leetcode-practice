@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 11
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/find-pivot-index/
 status: ac-unknown
 note: ""
 date_created: 2026-03-06

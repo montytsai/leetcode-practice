@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 3
 source: [Grind75, Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/reverse-linked-list/
 status: ac-unknown
 note: ""
 date_created: 2026-03-10

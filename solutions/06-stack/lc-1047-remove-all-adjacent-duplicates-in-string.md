@@ -6,6 +6,7 @@ category: 06-stack
 order: 4
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
 status: ac-unknown
 note: ""
 date_created: 2025-05-03

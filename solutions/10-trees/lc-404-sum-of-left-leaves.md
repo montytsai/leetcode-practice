@@ -6,6 +6,7 @@ category: 10-trees
 order: 19
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/sum-of-left-leaves/
 status: ac-unknown
 note: ""
 date_created: 2025-05-10

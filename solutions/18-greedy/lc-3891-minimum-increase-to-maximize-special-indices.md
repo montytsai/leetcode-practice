@@ -6,6 +6,7 @@ category: 18-greedy
 order: 16
 source: [Contest]
 platform: LeetCode
+url: https://leetcode.com/problems/minimum-increase-to-maximize-special-indices/
 status: ac-assisted
 note: ""
 date_created: 2026-04-07

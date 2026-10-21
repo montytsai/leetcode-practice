@@ -6,6 +6,7 @@ category: 10-trees
 order: 21
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/path-sum/
 status: ac-unknown
 note: ""
 date_created: 2025-05-12

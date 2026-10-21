@@ -6,6 +6,7 @@ category: 10-trees
 order: 12
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/minimum-depth-of-binary-tree/
 status: ac-unknown
 note: ""
 date_created: 2025-05-09

@@ -6,6 +6,7 @@ category: 06-stack
 order: 3
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/valid-parentheses/
 status: ac-unknown
 note: ""
 date_created: 2025-05-02

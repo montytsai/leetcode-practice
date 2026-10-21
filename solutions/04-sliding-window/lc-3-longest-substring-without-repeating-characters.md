@@ -6,6 +6,7 @@ category: 04-sliding-window
 order: 8
 source: [Grind75]
 platform: LeetCode
+url: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 status: ac-unknown
 note: ""
 date_created: 2026-08-18

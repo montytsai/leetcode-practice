@@ -6,6 +6,7 @@ category: 10-trees
 order: 32
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 status: ac-assisted
 note: ""
 date_created: 2025-05-20

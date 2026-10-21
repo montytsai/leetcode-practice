@@ -6,6 +6,7 @@ category: 12-backtracking
 order: 1
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/combinations/
 status: ac-unknown
 note: ""
 date_created: 2026-04-09

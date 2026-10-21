@@ -6,6 +6,7 @@ category: 06-stack
 order: 6
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/asteroid-collision/
 status: ac-unknown
 note: ""
 date_created: 2026-03-07

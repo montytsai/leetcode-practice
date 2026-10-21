@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 18
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/determine-if-two-strings-are-close/
 status: ac-unknown
 note: ""
 date_created: 2026-03-04

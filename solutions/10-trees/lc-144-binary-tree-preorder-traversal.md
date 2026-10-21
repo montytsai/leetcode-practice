@@ -6,6 +6,7 @@ category: 10-trees
 order: 1
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/binary-tree-preorder-traversal/
 status: ac-unknown
 note: ""
 date_created: 2026-03-17

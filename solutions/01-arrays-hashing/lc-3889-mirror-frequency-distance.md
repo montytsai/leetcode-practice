@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 20
 source: [Contest]
 platform: LeetCode
+url: https://leetcode.com/problems/mirror-frequency-distance/
 status: ac-unknown
 note: ""
 date_created: 2026-04-05

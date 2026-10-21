@@ -6,6 +6,7 @@ category: 21-math-geometry
 order: 4
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/greatest-common-divisor-of-strings/
 status: ac-unknown
 note: ""
 date_created: 2026-02-24

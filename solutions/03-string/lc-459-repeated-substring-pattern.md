@@ -6,6 +6,7 @@ category: 03-string
 order: 3
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/repeated-substring-pattern/
 status: ac-unknown
 note: ""
 date_created: 2026-03-07

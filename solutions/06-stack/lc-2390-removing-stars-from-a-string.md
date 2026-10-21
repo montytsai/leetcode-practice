@@ -6,6 +6,7 @@ category: 06-stack
 order: 7
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/removing-stars-from-a-string/
 status: ac-unknown
 note: ""
 date_created: 2026-03-07

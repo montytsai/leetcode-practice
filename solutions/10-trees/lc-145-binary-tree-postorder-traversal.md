@@ -6,6 +6,7 @@ category: 10-trees
 order: 3
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/binary-tree-postorder-traversal/
 status: ac-unknown
 note: ""
 date_created: 2025-05-05

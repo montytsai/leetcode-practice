@@ -6,6 +6,7 @@ category: 12-backtracking
 order: 7
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/restore-ip-addresses/
 status: ac-unknown
 note: ""
 date_created: 2026-04-12

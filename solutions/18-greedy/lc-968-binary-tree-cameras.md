@@ -6,6 +6,7 @@ category: 18-greedy
 order: 14
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/binary-tree-cameras/
 status: ac-unknown
 note: ""
 date_created: 2026-04-04

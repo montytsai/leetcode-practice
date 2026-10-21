@@ -6,6 +6,7 @@ category: 18-greedy
 order: 1
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/assign-cookies/
 status: ac-unknown
 note: ""
 date_created: 2026-03-24

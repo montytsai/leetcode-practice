@@ -6,6 +6,7 @@ category: 21-math-geometry
 order: 2
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/happy-number/
 status: ac-unknown
 note: ""
 date_created: 2026-03-03

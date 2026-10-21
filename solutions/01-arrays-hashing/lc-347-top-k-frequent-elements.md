@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 9
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/top-k-frequent-elements/
 status: ac-unknown
 note: ""
 date_created: 2025-05-04

@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 10
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
 status: ac-unknown
 note: ""
 date_created: 2026-03-11

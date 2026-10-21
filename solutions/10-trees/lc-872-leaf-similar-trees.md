@@ -6,6 +6,7 @@ category: 10-trees
 order: 38
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/leaf-similar-trees/
 status: ac-unknown
 note: ""
 date_created: 2026-03-13

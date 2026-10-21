@@ -6,6 +6,7 @@ category: 10-trees
 order: 25
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/maximum-binary-tree/
 status: ac-unknown
 note: ""
 date_created: 2025-05-13

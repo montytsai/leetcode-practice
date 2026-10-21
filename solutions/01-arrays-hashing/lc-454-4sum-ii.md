@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 5
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/4sum-ii/
 status: ac-unknown
 note: ""
 date_created: 2026-03-04

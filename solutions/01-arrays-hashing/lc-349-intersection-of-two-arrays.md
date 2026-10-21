@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 3
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/intersection-of-two-arrays/
 status: ac-unknown
 note: ""
 date_created: 2026-03-02

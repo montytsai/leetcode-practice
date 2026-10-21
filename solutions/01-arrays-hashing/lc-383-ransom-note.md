@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 6
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/ransom-note/
 status: ac-unknown
 note: ""
 date_created: 2025-04-26

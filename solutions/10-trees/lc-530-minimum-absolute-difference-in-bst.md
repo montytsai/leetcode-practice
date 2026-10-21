@@ -6,6 +6,7 @@ category: 10-trees
 order: 29
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/minimum-absolute-difference-in-bst/
 status: ac-unknown
 note: ""
 date_created: 2026-03-20

@@ -6,6 +6,7 @@ category: 02-two-pointers
 order: 12
 source: [Grind75]
 platform: LeetCode
+url: https://leetcode.com/problems/valid-palindrome/
 status: ac-unknown
 note: ""
 date_created: 2026-07-14

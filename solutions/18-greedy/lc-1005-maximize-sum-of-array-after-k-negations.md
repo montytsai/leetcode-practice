@@ -6,6 +6,7 @@ category: 18-greedy
 order: 6
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
 status: ac-unknown
 note: ""
 date_created: 2026-03-27

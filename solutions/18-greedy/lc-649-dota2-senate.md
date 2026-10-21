@@ -6,6 +6,7 @@ category: 18-greedy
 order: 15
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/dota2-senate/
 status: ac-unknown
 note: ""
 date_created: 2026-03-09

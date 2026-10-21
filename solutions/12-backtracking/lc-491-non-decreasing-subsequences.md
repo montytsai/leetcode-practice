@@ -6,6 +6,7 @@ category: 12-backtracking
 order: 10
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/non-decreasing-subsequences/
 status: ac-unknown
 note: ""
 date_created: 2026-06-10

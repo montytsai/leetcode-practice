@@ -6,6 +6,7 @@ category: 18-greedy
 order: 9
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/lemonade-change/
 status: ac-unknown
 note: ""
 date_created: 2026-03-30

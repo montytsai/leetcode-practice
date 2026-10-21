@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 4
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/two-sum/
 status: ac-unknown
 note: ""
 date_created: 2026-03-03

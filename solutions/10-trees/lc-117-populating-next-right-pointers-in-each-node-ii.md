@@ -6,6 +6,7 @@ category: 10-trees
 order: 10
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 status: ac-unknown
 note: ""
 date_created: 2025-05-09

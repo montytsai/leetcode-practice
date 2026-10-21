@@ -6,6 +6,7 @@ category: 14-graphs
 order: 1
 source: [Grind75]
 platform: LeetCode
+url: https://leetcode.com/problems/flood-fill/
 status: ac-unknown
 note: ""
 date_created: 2026-07-15

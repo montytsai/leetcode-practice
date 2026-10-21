@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 8
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/odd-even-linked-list/
 status: ac-unknown
 note: ""
 date_created: 2026-03-10

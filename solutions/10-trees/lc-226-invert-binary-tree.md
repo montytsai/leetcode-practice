@@ -6,6 +6,7 @@ category: 10-trees
 order: 13
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/invert-binary-tree/
 status: ac-unknown
 note: ""
 date_created: 2026-03-19

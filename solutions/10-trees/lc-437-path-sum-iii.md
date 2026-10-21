@@ -6,6 +6,7 @@ category: 10-trees
 order: 40
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/path-sum-iii/
 status: ac-unknown
 note: ""
 date_created: 2026-03-14

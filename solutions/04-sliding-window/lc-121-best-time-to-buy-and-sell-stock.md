@@ -6,6 +6,7 @@ category: 04-sliding-window
 order: 3
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 status: ac-unknown
 note: ""
 date_created: 2026-07-14

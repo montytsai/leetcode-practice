@@ -6,6 +6,7 @@ category: 04-sliding-window
 order: 1
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/minimum-size-subarray-sum/
 status: ac-unknown
 note: ""
 date_created: 2026-03-01

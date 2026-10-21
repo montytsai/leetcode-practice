@@ -6,6 +6,7 @@ category: 03-string
 order: 1
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/defanging-an-ip-address/
 status: ac-unknown
 note: ""
 date_created: 2026-03-05

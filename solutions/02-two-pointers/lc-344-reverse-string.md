@@ -6,6 +6,7 @@ category: 02-two-pointers
 order: 3
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/reverse-string/
 status: ac-unknown
 note: ""
 date_created: 2025-04-26

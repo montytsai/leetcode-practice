@@ -6,6 +6,7 @@ category: 10-trees
 order: 42
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
 status: ac-unknown
 note: ""
 date_created: 2026-03-18

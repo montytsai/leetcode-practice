@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 8
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/is-subsequence/
 status: ac-unknown
 note: ""
 date_created: 2026-02-28

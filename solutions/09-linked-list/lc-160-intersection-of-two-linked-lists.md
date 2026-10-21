@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 6
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/intersection-of-two-linked-lists/
 status: ac-unknown
 note: ""
 date_created: 2026-03-12

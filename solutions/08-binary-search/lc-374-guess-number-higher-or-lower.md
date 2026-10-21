@@ -6,6 +6,7 @@ category: 08-binary-search
 order: 4
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/guess-number-higher-or-lower/
 status: ac-unknown
 note: ""
 date_created: 2026-03-20

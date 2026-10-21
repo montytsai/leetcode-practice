@@ -6,6 +6,7 @@ category: 18-greedy
 order: 10
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/queue-reconstruction-by-height/
 status: ac-unknown
 note: ""
 date_created: 2026-03-31

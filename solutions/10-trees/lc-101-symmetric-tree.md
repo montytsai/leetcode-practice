@@ -6,6 +6,7 @@ category: 10-trees
 order: 14
 source: [Grind75, Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/symmetric-tree/
 status: ac-unknown
 note: ""
 date_created: 2026-03-19

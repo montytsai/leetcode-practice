@@ -6,6 +6,7 @@ category: 02-two-pointers
 order: 9
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/reverse-vowels-of-a-string/
 status: ac-unknown
 note: ""
 date_created: 2026-02-25

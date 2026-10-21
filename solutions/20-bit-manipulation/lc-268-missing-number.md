@@ -6,6 +6,7 @@ category: 20-bit-manipulation
 order: 5
 source: [Grind75, Extra]
 platform: LeetCode
+url: https://leetcode.com/problems/missing-number/
 status: ac-unknown
 note: ""
 date_created: 2026-08-10

@@ -6,6 +6,7 @@ category: 04-sliding-window
 order: 5
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/max-consecutive-ones-iii/
 status: ac-unknown
 note: ""
 date_created: 2026-03-01

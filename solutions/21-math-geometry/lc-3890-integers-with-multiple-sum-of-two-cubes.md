@@ -6,6 +6,7 @@ category: 21-math-geometry
 order: 5
 source: [Contest]
 platform: LeetCode
+url: https://leetcode.com/problems/integers-with-multiple-sum-of-two-cubes/
 status: ac-unknown
 note: ""
 date_created: 2026-04-05

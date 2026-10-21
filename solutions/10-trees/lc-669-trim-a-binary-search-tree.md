@@ -6,6 +6,7 @@ category: 10-trees
 order: 35
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/trim-a-binary-search-tree/
 status: ac-unknown
 note: ""
 date_created: 2026-03-20

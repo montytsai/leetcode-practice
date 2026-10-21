@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 9
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
 status: ac-unknown
 note: ""
 date_created: 2026-03-10

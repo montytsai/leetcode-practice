@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 7
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 status: ac-unknown
 note: ""
 date_created: 2026-03-06

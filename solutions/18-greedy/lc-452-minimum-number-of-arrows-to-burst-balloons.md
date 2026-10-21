@@ -6,6 +6,7 @@ category: 18-greedy
 order: 11
 source: [Carl, LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
 status: ac-unknown
 note: ""
 date_created: 2026-03-31

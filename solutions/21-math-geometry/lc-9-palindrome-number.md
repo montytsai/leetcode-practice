@@ -6,6 +6,7 @@ category: 21-math-geometry
 order: 7
 source: [Grind75]
 platform: LeetCode
+url: https://leetcode.com/problems/palindrome-number/
 status: ac-assisted
 note: ""
 date_created: 2026-07-19

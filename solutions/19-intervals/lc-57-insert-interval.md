@@ -6,6 +6,7 @@ category: 19-intervals
 order: 3
 source: [Grind75, Extra]
 platform: LeetCode
+url: https://leetcode.com/problems/insert-interval/
 status: ac-unknown
 note: ""
 date_created: 2026-08-01

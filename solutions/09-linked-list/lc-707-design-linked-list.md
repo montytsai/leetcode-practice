@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 2
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/design-linked-list/
 status: ac-unknown
 note: ""
 date_created: 2026-03-11

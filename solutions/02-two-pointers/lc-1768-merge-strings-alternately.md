@@ -6,6 +6,7 @@ category: 02-two-pointers
 order: 10
 source: [LeetCode75]
 platform: LeetCode
+url: https://leetcode.com/problems/merge-strings-alternately/
 status: ac-unknown
 note: ""
 date_created: 2026-02-25

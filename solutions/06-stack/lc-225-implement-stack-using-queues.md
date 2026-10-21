@@ -6,6 +6,7 @@ category: 06-stack
 order: 2
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/implement-stack-using-queues/
 status: ac-unknown
 note: ""
 date_created: 2025-05-02

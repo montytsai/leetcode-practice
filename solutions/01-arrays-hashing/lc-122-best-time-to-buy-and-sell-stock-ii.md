@@ -6,6 +6,7 @@ category: 01-arrays-hashing
 order: 10
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 status: ac-unknown
 note: ""
 date_created: 2026-03-26

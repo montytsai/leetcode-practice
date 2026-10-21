@@ -6,6 +6,7 @@ category: 09-linked-list
 order: 5
 source: [Carl]
 platform: LeetCode
+url: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 status: ac-unknown
 note: ""
 date_created: 2026-03-12

@@ -6,6 +6,7 @@ category: 18-greedy
 order: 3
 source: [Extra]
 platform: LeetCode
+url: https://leetcode.com/problems/maximum-subarray/
 status: review
 note: "練習用 Divide and Conquer 改寫"
 date_created: 2026-03-26
