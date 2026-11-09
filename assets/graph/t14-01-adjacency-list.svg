@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">鄰接表：陣列與鄰居鏈結串列</title>
+  <desc id="desc">節點 1 的鄰居為 3、5；節點 2 的鄰居為 4、3、5；節點 3 的鄰居為 4；節點 4 的鄰居為 1；節點 5 沒有出邊。每列各自串接，以 null 結束。</desc>
+  <defs>
+    <marker id="next-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="900" height="580" rx="12" fill="#ffffff"/>
+  <rect x="24" y="24" width="190" height="492" rx="10" fill="#fff4cc" stroke="#c59321"/>
+  <rect x="240" y="24" width="636" height="492" rx="10" fill="#eaf2ff" stroke="#6484b5"/>
+  <g fill="#172033" text-anchor="middle" font-size="23" font-weight="600">
+    <text x="119" y="62">陣列</text>
+    <text x="558" y="62">鄰居鏈結串列</text>
+  </g>
+  <g fill="#475569" text-anchor="middle" font-size="16">
+    <text x="119" y="88">節點索引</text>
+    <text x="558" y="88">每一列是一份獨立的鄰居名單</text>
+  </g>
+  <!-- Array cells: rows share the same y coordinates as their lists. -->
+  <rect x="72" y="112" width="94" height="370" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <path d="M72 186 H166 M72 260 H166 M72 334 H166 M72 408 H166" fill="none" stroke="#334155" stroke-width="2"/>
+  <!-- Every occurrence of a neighbor is a distinct list entry. -->
+  <g fill="#ffffff" stroke="#334155" stroke-width="2">
+    <rect x="290" y="124" width="76" height="50" rx="4"/>
+    <rect x="454" y="124" width="76" height="50" rx="4"/>
+    <rect x="290" y="198" width="76" height="50" rx="4"/>
+    <rect x="454" y="198" width="76" height="50" rx="4"/>
+    <rect x="618" y="198" width="76" height="50" rx="4"/>
+    <rect x="290" y="272" width="76" height="50" rx="4"/>
+    <rect x="290" y="346" width="76" height="50" rx="4"/>
+  </g>
+  <g fill="none" stroke="#334155" stroke-width="2" marker-end="url(#next-arrow)">
+    <path d="M166 149 H288"/>
+    <path d="M366 149 H452"/>
+    <path d="M530 149 H590"/>
+    <path d="M166 223 H288"/>
+    <path d="M366 223 H452"/>
+    <path d="M530 223 H616"/>
+    <path d="M694 223 H754"/>
+    <path d="M166 297 H288"/>
+    <path d="M366 297 H426"/>
+    <path d="M166 371 H288"/>
+    <path d="M366 371 H426"/>
+    <path d="M166 445 H288"/>
+  </g>
+  <g fill="#172033" text-anchor="middle" dominant-baseline="middle" font-size="25">
+    <text x="119" y="149">1</text>
+    <text x="119" y="223">2</text>
+    <text x="119" y="297">3</text>
+    <text x="119" y="371">4</text>
+    <text x="119" y="445">5</text>
+    <text x="328" y="149">3</text>
+    <text x="492" y="149">5</text>
+    <text x="328" y="223">4</text>
+    <text x="492" y="223">3</text>
+    <text x="656" y="223">5</text>
+    <text x="328" y="297">4</text>
+    <text x="328" y="371">1</text>
+  </g>
+  <g fill="#475569" dominant-baseline="middle" font-size="21" font-family="monospace">
+    <text x="600" y="149">null</text>
+    <text x="764" y="223">null</text>
+    <text x="436" y="297">null</text>
+    <text x="436" y="371">null</text>
+    <text x="300" y="445">null</text>
+  </g>
+  <text x="390" y="445" fill="#475569" dominant-baseline="middle" font-size="17">沒有出邊</text>
+  <text x="450" y="551" fill="#334155" text-anchor="middle" font-size="17">串列內的箭頭表示 next 指標，不代表圖的邊</text>
+</svg>

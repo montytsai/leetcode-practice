@@ -334,12 +334,16 @@ graph TB
 
 最直覺的做法——把每條邊記成一列就好。
 
-```mermaid
-flowchart TD
-    subgraph edgelist["一列一條邊"]
-        node_table["<table border='1' style='border-collapse: collapse; text-align: center;'><tr><td style='width: 50px;'>6</td><td style='width: 50px;'>7</td></tr><tr><td>6</td><td>8</td></tr><tr><td>7</td><td>8</td></tr><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>5</td></tr><tr><td>5</td><td>4</td></tr><tr><td>4</td><td>3</td></tr><tr><td>3</td><td>1</td></tr></table>"]
-    end
-```
+| 起點 | 終點 |
+| --- | --- |
+| 6 | 7 |
+| 6 | 8 |
+| 7 | 8 |
+| 1 | 2 |
+| 2 | 5 |
+| 5 | 4 |
+| 4 | 3 |
+| 3 | 1 |
 
 第一列 `6 7` 就是「6 指向 7」。有 `n` 條邊就開 `n × 2` 的陣列。
 
@@ -392,53 +396,11 @@ g[2][5] = g[5][2] = 6;              // 無向圖：2 與 5 互通，兩格都要
 
 這個像什麼？像**通訊錄**——每個人底下列出他認識的人，認識幾個記幾個，不認識的一格都不佔。
 
-```mermaid
-flowchart LR
-    subgraph arr["Array"]
-        direction TB
-        idx1["1"]
-        idx2["2"]
-        idx3["3"]
-        idx4["4"]
-        idx5["5"]
-    end
+左邊是陣列索引，右邊是該節點的鄰居名單；每個節點固定占一列：
 
-    subgraph list["Linked List"]
-        direction TB
-        subgraph row1[" "]
-            direction LR
-            a1["3"] --> a2["5"]
-        end
-        subgraph row2[" "]
-            direction LR
-            b1["4"] --> b2["3"] --> b3["5"]
-        end
-        subgraph row3[" "]
-            direction LR
-            c1["4"]
-        end
-        subgraph row4[" "]
-            direction LR
-            d1["1"]
-        end
-    end
+![鄰接表：陣列的每一格指向自己的鄰居串列](../assets/graph/t14-01-adjacency-list.svg)
 
-    %% link 2 side
-    idx1 --> a1
-    idx2 --> b1
-    idx3 --> c1
-    idx4 --> d1
-```
-
-這張圖在講的是：
-
-```text
-1 → 3, 5
-2 → 4, 3, 5
-3 → 4
-4 → 1
-5 → （沒有出邊）
-```
+**右側串列內的箭頭是 next 指標，不是圖的邊。** 第一列表示圖中有 `1 → 3` 和 `1 → 5`，不表示有 `3 → 5`；`null` 表示名單結束。
 
 順帶一提，原文寫「陣列 + 鏈結串列」，那是資料結構課本的講法。**你在 Java 裡不用真的去手刻 linked list**，直接用 `List<List<Integer>>` 就好：
 
