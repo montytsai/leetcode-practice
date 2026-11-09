@@ -39,7 +39,7 @@ Trie 是一棵**多元樹（N-ary tree）**，把一堆字串**沿著共同前�
 - **邊 = 一個字元**，代表「再吃掉一個字元往下走」
 - **根節點代表空字串 `""`**，它自己不存任何字元
 
-所以「節點裡存 char」的直覺是錯的。真正的資訊是：**這個節點有哪些孩子、每個孩子是被哪個字元帶到的。**
+在這份實作中，字元由父節點的孩子表記錄；節點只需要知道有哪些孩子，以及自己是不是單字結尾。**節點代表一個前綴，不代表節點有存放完整字串的欄位。** 其他實作也能額外儲存字元，這是資料表示的選擇。
 
 插入 `cat`、`car`、`dog` 之後：
 
@@ -64,6 +64,32 @@ Trie 是一棵**多元樹（N-ary tree）**，把一堆字串**沿著共同前�
 1. `cat` 和 `car` **共用了 `c` → `a` 這兩條邊**，這就是「壓縮共同前綴」省空間的來源。
 2. 節點 `(ca)` 本身**不是**任何單字，它只是路過的中繼站。
 3. 「是不是一個完整單字」是節點上的一個**旗標**，跟「有沒有孩子」完全是兩回事。
+
+## 把圖對上實際的 Map
+
+插入 `app`、`apple`、`apt` 後，用 A 到 G 當作物件名稱：
+
+```text
+A(root) --a--> B --p--> C --p--> D* --l--> E --e--> F*
+                        |
+                        t
+                        v
+                        G*
+
+A.children = {'a': B}         A.isLast = false
+B.children = {'p': C}         B.isLast = false
+C.children = {'p': D, 't': G} C.isLast = false
+D.children = {'l': E}         D.isLast = true
+E.children = {'e': F}         E.isLast = false
+F.children = {}               F.isLast = true
+G.children = {}               G.isLast = true
+```
+
+`A` 到 `G` 各自是一個 `new Trie()` 建立的物件，也各自有獨立的 `children`。B 和 C 都有 `'p'` key，分別存在不同 Map，互不覆蓋。這個結構按節點存放；同一深度可以有多個節點，沒有共用的「每層 Map」。
+
+`curr.children.put(c, new Trie())` 在目前物件的 Map 中新增一條邊與它指向的節點；key `c` 記錄邊的字元，value 保存子節點的 reference。`curr = curr.children.get(c)` 讓游標指向子節點，下一輪便使用子節點自己的 Map。
+
+走過 `a → p → p` 到 D，路徑讓 D 代表 `app`；D 內沒有 `"app"` 字串。`isLast = true` 表示這條路徑曾作為完整單字插入；即使 D 還有孩子，它仍可以是單字結尾。
 
 ## 節點該存什麼（自己推導，不要背）
 
@@ -157,7 +183,7 @@ for (每個字元 c in word):
 
 ## 已刷題目
 
-（尚未開始，AC 後補上）
+- [208. Implement Trie (Prefix Tree)](../solutions/13-tries/lc-208-implement-trie-prefix-tree.md) Medium — HashMap 的 key 表示邊，value 指向各自擁有孩子表的節點。
 
 ## 相關
 

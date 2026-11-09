@@ -4,9 +4,9 @@
 > 改狀態 → 改題解 frontmatter 的 `status`；改順序 → 改 `order`；改完重跑腳本。
 > 一題一列，不另開表格；每題住哪個資料夾由 `category` 決定。
 
-共 262 題 ｜ done: 192 ｜ todo: 70 ｜ 難度 Easy 94 / Medium 153 / Hard 15
+共 262 題 ｜ done: 193 ｜ todo: 69 ｜ 難度 Easy 94 / Medium 153 / Hard 15
 
-狀態分布：ac-assisted 15 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 70
+狀態分布：ac-assisted 16 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 69
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -234,11 +234,11 @@
 | [51](https://leetcode.com/problems/n-queens/) | N-Queens | Hard | Carl | ac-unknown | [🔗](solutions/12-backtracking/lc-51-n-queens.md) |
 | [37](https://leetcode.com/problems/sudoku-solver/) | Sudoku Solver | Hard | Carl | todo | — |
 
-## Tries（1 題 · done 0 · todo 1）
+## Tries（1 題 · done 1 · todo 0）
 
 | id | title | difficulty | source | status | solution |
 |---|---|---|---|---|---|
-| [208](https://leetcode.com/problems/implement-trie-prefix-tree/) | Implement Trie (Prefix Tree) | Medium | Carl | todo | — |
+| [208](https://leetcode.com/problems/implement-trie-prefix-tree/) | Implement Trie (Prefix Tree) | Medium | Grind75 | ac-assisted | [🔗](solutions/13-tries/lc-208-implement-trie-prefix-tree.md) |
 
 ## Graphs（24 題 · done 4 · todo 20）
 

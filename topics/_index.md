@@ -73,7 +73,7 @@
 
 ## T13 · Tries
 
-- [T13-01 trie-basics](T13-01-trie-basics.md) — **基礎篇**：字元住在邊上的心智模型（理論已備，題還沒刷）
+- [T13-01 trie-basics](T13-01-trie-basics.md) — **基礎篇**：前綴路徑、邊的字元與實際 children Map；已刷題目見篇末
 - 總結篇**待建**——觸發點是刷完 lc-208、lc-1268
 
 ## T14 · Graphs
