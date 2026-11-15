@@ -10,7 +10,7 @@ url: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 status: ac-assisted
 note: ""
 date_created: 2026-03-16
-date_updated: 2026-09-05
+date_updated: 2026-11-15
 ---
 
 # 236. Lowest Common Ancestor of a Binary Tree
@@ -88,15 +88,117 @@ class Solution {
 
 ---
 
+## 解法二：Parent Map + 祖先 Set
+
+### Intuition
+
+LCA 是 p、q 各自往 root 的祖先鏈上第一個交會的節點。二元樹節點沒有 parent 指標，所以先走訪一次，把每個節點的父節點記進 `Map`，「往上走」才有辦法執行。有了 parent map，問題就變成兩條鏈找交點，和 Intersection of Two Linked Lists 同一個結構。
+
+做法是把 p 與它所有祖先(含 p 自己)放進 `Set`，再讓 q 由下往上走，第一個落在 `Set` 內的節點同時是 p、q 的祖先。因為 q 是由下往上走，第一個命中的就是最深的那個，也就是最近的。祖先鏈含節點自身，所以 p 是 q 的祖先時，答案自然是 p。
+
+建 Map 時可以提早結束。節點是在它的父節點被彈出時才登記，父節點一定比子節點先在 Map 內，所以只要 p、q 都已登記，兩條祖先鏈就都完整，不必走完整棵樹。
+
+這個解法適合節點本來就有 parent 指標、或同一棵樹要查多組 LCA 的情境(完整 parent map 建一次，之後每次查詢 `O(h)`)。
+
+### Approach
+
+1. `root` 對應 `null` 放進 `parentMap`，`root` 推入 `stack`。
+2. 當 `p`、`q` 還有任一個不在 `parentMap` 裡，彈出一個節點，把它非 `null` 的左、右子節點登記進 `parentMap` 並推入 `stack`。
+3. 從 `p` 開始往上走到 `null`，把沿途每個節點(含 `p`)加入 `ancestors`。
+4. 從 `q` 開始往上走，第一個在 `ancestors` 內的節點就是 LCA，直接回傳。
+
+### Complexity
+
+**Time complexity: `O(n)`**
+
+建 Map 最壞要走訪全部 `n` 個節點；兩段向上追溯各最多 `h` 步，`h` 最壞等於 `n`，合計仍是 `O(n)`。
+
+**Space complexity: `O(n)`**
+
+`parentMap` 最壞存 `n` 個節點；`stack` 最多 `O(h)`、`ancestors` 最多 `O(h)`，都被 `parentMap` 涵蓋。
+
+### Code
+
+```java
+/**
+ * 236. Lowest Common Ancestor of a Binary Tree
+ * Time Complexity: O(n)
+ * Space Complexity: O(n)
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // Map each node to its parent.
+        Map<TreeNode, TreeNode> parentMap = new HashMap<>();
+        parentMap.put(root, null);
+
+        // Walk the tree with a stack to build the map.
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        stack.push(root);
+
+        // Stop early once both p and q have a recorded parent.
+        while (!parentMap.containsKey(p) || !parentMap.containsKey(q)) {
+            TreeNode curr = stack.pop();
+
+            if (curr.left != null) {
+                parentMap.put(curr.left, curr);
+                stack.push(curr.left);
+            }
+
+            if (curr.right != null) {
+                parentMap.put(curr.right, curr);
+                stack.push(curr.right);
+            }
+        }
+
+        // Collect p and all of its ancestors.
+        Set<TreeNode> ancestors = new HashSet<>();
+        while (p != null) {
+            ancestors.add(p);
+            p = parentMap.get(p);
+        }
+
+        // Climb up from q. The first node found in the set is the LCA.
+        while (q != null) {
+            if (ancestors.contains(q)) {
+                return q;
+            }
+            q = parentMap.get(q);
+        }
+
+        return null;
+    }
+}
+```
+
+### Code Review
+
+- **Learning provenance**：`reference-assisted`；參考他人的寫法後自己重寫並 AC。能否不看參考獨立重現：未確認。
+- **Correctness / invariant**：節點在父節點被彈出時才登記，所以 `p`、`q` 都登記時，兩條祖先鏈上的每個節點都已在 Map 內，向上追溯不會斷。root 的 value 是 `null`，所以必須用 `containsKey` 而不是 `get(...) != null` 判斷是否已登記，這裡用對了。`ancestors` 含 `p` 自身，涵蓋 p 是 q 祖先的情況。
+- **Strength**：提早結束讓最佳情況不必走完整棵樹；用顯式 `stack` 避開遞迴深度，退化成鏈狀的樹不會 stack overflow。`TreeNode` 沒覆寫 `equals`/`hashCode`，`HashMap`/`HashSet` 以節點身分比對，正是需要的語意。
+- **Bug**：無(題目保證 `p`、`q` 都在樹內)。
+- **Trade-off**：空間固定 `O(n)`，比解法一的 `O(h)` 多。若 `p` 或 `q` 不在樹內，`stack.pop()` 會在 stack 空時丟 `NoSuchElementException`，本題因保證存在所以不會發生。
+- **Style**：迴圈內直接重新賦值參數 `p`、`q`，讀的人要追蹤它們已經不是原本的節點；改用 `curr` 之類的區域變數更清楚。時間／空間註解建議寫成 `O(n)`，不用小寫 `o`。
+- **Edge cases**：p 或 q 就是 root(root 一開始就在 Map 內，只等另一個節點)、p 是 q 的祖先或反之、兩者分在最深的左右葉節點，都被正確處理。
+
+---
+
 ## 解法比較
 
-只有一個解法，略。
+| 指標 | 解法一：後序遞迴 | 解法二：Parent Map + 祖先 Set |
+| --- | --- | --- |
+| 時間 | `O(n)` | `O(n)`，可提早結束 |
+| 空間 | `O(h)` | `O(n)` |
+| 遞迴深度風險 | 有，鏈狀樹最壞 `O(n)` | 無(顯式 `stack`) |
+| 想法 | 回傳值向上匯聚，需要先理解回傳值的意義 | 兩條祖先鏈找交點，直觀 |
+| 適用 | 一般 LCA，面試主要答案 | 節點有 parent 指標，或同一棵樹查多組 LCA |
 
 ### Optimality
 
-以時間衡量，`O(n)` 是必要下界，因為最壞情況下 p、q 可能分別藏在樹的兩個角落，必須拜訪過所有節點才能確定。以空間衡量，遞迴版是 `O(h)`，多數情況優於下面替代法固定的 `O(n)`。這個解法在時間與(平均)空間兩個指標上都已經是最佳。
+時間指標下兩個解法都是 `O(n)`。最壞情況 p、q 可能藏在樹的兩個角落，必須拜訪過所有節點才能確定，`O(n)` 是下界。
 
-替代法(不同 trade-off)：用一個 HashMap 記錄從 root 走訪時每個節點的 parent(先 BFS 或 DFS 建出 parent map)，再從 p 往上收集所有祖先存進一個 Set，最後從 q 往上走，第一個出現在該 Set 裡的節點就是 LCA。這個做法空間固定是 `O(n)`(parent map + visited set)，比遞迴版費空間，但邏輯是「兩條鏈找交點」，對還沒建立起「後序回傳值代表什麼」這層抽象直覺的人來說更直觀。之後想換個角度鞏固這題，可以練這個版本。
+空間指標下解法一的 `O(h)` 優於解法二的 `O(n)`，所以以空間衡量，解法一是比較好的選擇，也是面試時的預設答案。以可讀性與直觀程度衡量，解法二不需要理解「回傳值代表什麼」，比較容易自己從零推出來。
+
+如果樹的節點本來就帶 parent 指標(LeetCode 1650)，不必建 Map，兩條鏈可以直接用雙指標找交點，空間降到 `O(1)`；解法二的祖先鏈概念可以直接沿用到那一題。
 
 ---
 
