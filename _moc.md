@@ -4,9 +4,9 @@
 > 改狀態 → 改題解 frontmatter 的 `status`；改順序 → 改 `order`；改完重跑腳本。
 > 一題一列，不另開表格；每題住哪個資料夾由 `category` 決定。
 
-共 262 題 ｜ done: 193 ｜ todo: 69 ｜ 難度 Easy 94 / Medium 153 / Hard 15
+共 263 題 ｜ done: 194 ｜ todo: 69 ｜ 難度 Easy 94 / Medium 154 / Hard 15
 
-狀態分布：ac-assisted 16 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 69
+狀態分布：ac-assisted 17 ｜ ac-solo 6 ｜ ac-unknown 169 ｜ review 2 ｜ todo 69
 
 狀態階梯：`todo` → `ac-unknown`（解過但沒記怎麼解的）／`ac-assisted`（靠提示或解答）／`ac-solo`（自己解出）→ `mastered`（重刷仍能獨立解出）；`review` = 已解但要再刷。
 
@@ -152,7 +152,7 @@
 | [234](https://leetcode.com/problems/palindrome-linked-list/) | Palindrome Linked List | Easy | Grind75 | ac-solo | [🔗](solutions/09-linked-list/lc-234-palindrome-linked-list.md) |
 | [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Medium | Grind75 | ac-assisted | [🔗](solutions/09-linked-list/lc-146-lru-cache.md) |
 
-## Trees（47 題 · done 45 · todo 2）
+## Trees（48 題 · done 46 · todo 2）
 
 | id | title | difficulty | source | status | solution |
 |---|---|---|---|---|---|
@@ -202,6 +202,7 @@
 | [100](https://leetcode.com/problems/same-tree/) | Same Tree | Easy | Grind75 | ac-unknown | [🔗](solutions/10-trees/lc-100-same-tree.md) |
 | [572](https://leetcode.com/problems/subtree-of-another-tree/) | Subtree of Another Tree | Easy | Grind75 | ac-unknown | [🔗](solutions/10-trees/lc-572-subtree-of-another-tree.md) |
 | [96](https://leetcode.com/problems/unique-binary-search-trees/) | Unique Binary Search Trees | Medium | Carl | todo | — |
+| [230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | Kth Smallest Element in a BST | Medium | Grind75 | ac-assisted | [🔗](solutions/10-trees/lc-230-kth-smallest-element-in-a-bst.md) |
 | [337](https://leetcode.com/problems/house-robber-iii/) | House Robber III | Medium | Carl | todo | — |
 
 ## Heap / Priority Queue（6 題 · done 3 · todo 3）

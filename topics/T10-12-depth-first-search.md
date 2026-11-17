@@ -4,7 +4,11 @@
 
 DFS 常以遞迴維護子樹的狀態與回傳條件。一題同時包含「搜尋候選位置」與「驗證候選結構」時，可以拆成兩個職責單純的遞迴函式，並用 `||` 或 `&&` 短路。
 
+遞迴的參數、共享狀態與回傳值可以各自負責不同工作。LC 230 的成員欄位共享剩餘排名，節點回傳值傳遞已找到的答案；一旦非 null 就立即向上傳，避免繼續拜訪。Java 的 int 參數是值的副本，子呼叫修改它不會回寫呼叫端。
+
 ## 已刷題目
+
+- [230. Kth Smallest Element in a BST](../solutions/10-trees/lc-230-kth-smallest-element-in-a-bst.md) Medium — 顯式 stack 在 pop 時計數；遞迴共享剩餘排名並立即向上傳答案。
 
 - [100. Same Tree](../solutions/10-trees/lc-100-same-tree.md) Easy
 - [101. Symmetric Tree](../solutions/10-trees/lc-101-symmetric-tree.md) Easy

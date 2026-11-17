@@ -12,6 +12,8 @@ LC 236 另有 parent map 解法：樹節點沒有 parent 指標，先用 `Map<Tr
 
 ## 已刷題目
 
+- [230. Kth Smallest Element in a BST](../solutions/10-trees/lc-230-kth-smallest-element-in-a-bst.md) Medium — 比較迭代與遞迴中序的拜訪時機，以及找到答案後提早返回。
+
 - [100. Same Tree](../solutions/10-trees/lc-100-same-tree.md) Easy
 - [101. Symmetric Tree](../solutions/10-trees/lc-101-symmetric-tree.md) Easy
 - [102. Binary Tree Level Order Traversal](../solutions/10-trees/lc-102-binary-tree-level-order-traversal.md) Medium

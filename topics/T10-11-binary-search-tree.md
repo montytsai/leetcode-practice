@@ -4,7 +4,11 @@
 
 BST 的中序順序是遞增的。建立平衡 BST 時，從排序區間選中點作 root，並遞迴建立左右子樹。
 
+找第 k 小時，迭代中序只在 pop 後計數；沿左分支入 stack 尚不算拜訪。第 k 次拜訪就停止，時間 O(h + k)、空間 O(h)。
+
 ## 已刷題目
+
+- [230. Kth Smallest Element in a BST](../solutions/10-trees/lc-230-kth-smallest-element-in-a-bst.md) Medium — 迭代與遞迴都依中序遞增順序計排名，第 k 次拜訪即停止。
 
 - [98. Validate Binary Search Tree](../solutions/10-trees/lc-98-validate-binary-search-tree.md) Medium
 - [108. Convert Sorted Array to Binary Search Tree](../solutions/10-trees/lc-108-convert-sorted-array-to-binary-search-tree.md) Easy
